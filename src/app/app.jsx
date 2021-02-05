@@ -1,12 +1,13 @@
 import React from 'react'
 import './app.css'
 import './fonts.css'
-import Auth from "../components/auth/auth";
+import MenuCategories from '../components/waiter/menu-categories/menu-categories'
+
 
 const App = () => {
     return (
         <div>
-            <Auth />
+            <MenuCategories/>
         </div>
     );
 }
