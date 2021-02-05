@@ -11,11 +11,13 @@ const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
     
     return (
+        <Auth />
         <BrowserRouter>
             <Route path='/' component={Auth} exact/>
             <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
             <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
         </BrowserRouter>
+        
     );
 }
 
