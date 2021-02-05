@@ -6,8 +6,10 @@ import Auth from "../components/auth/auth";
 
 const App = () => {
     return (
-        <Auth/>
-    )
+        <div>
+            <Auth />
+        </div>
+    );
 }
 
 export default App;
