@@ -1,8 +1,13 @@
 import './waiter.css'
+import WaiterHeader from "./waiter-header/waiter-header";
+import WaiterActiveOrders from "./waiter-active-orders/waiter-active-orders";
 
 const Waiter = () =>{
     return (
-        <div className="title">Это страница официанта</div>
+        <div>
+            <WaiterHeader />
+            <WaiterActiveOrders />
+        </div>
     );
 }
 
