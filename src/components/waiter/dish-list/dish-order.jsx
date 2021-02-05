@@ -1,5 +1,5 @@
 import React from 'react';
-import '../dish-list.css'
+import './dish-list.css'
 
 const DishOrder = () => {
     return (

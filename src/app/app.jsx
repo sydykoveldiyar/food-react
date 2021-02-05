@@ -6,6 +6,7 @@ import Auth from "../components/auth/auth";
 import PrivateRoute from "./private-route";
 import Waiter from "../components/waiter/waiter";
 import Admin from "../components/admin/admin";
+import WaiterTables from '../components/waiter/waiter-active-orders/waiter-tables/waiter-tables';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path='/' component={Auth} exact />
                 <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
                 <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
+                <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} />
             </BrowserRouter>
         </div>
     );

@@ -28,6 +28,7 @@ a{
 
 .grid__col-4{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid__col-3{

@@ -1,4 +1,5 @@
 import React from 'react';
+import './dish-list.css'
 
 const Basket = () => {
     return (
