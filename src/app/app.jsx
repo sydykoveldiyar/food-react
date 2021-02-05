@@ -3,10 +3,11 @@ import './app.css'
 import './fonts.css'
 import Auth from "../components/auth/auth";
 
+
 const App = () => {
     return (
-        <Auth />
-    );
+        <Auth/>
+    )
 }
 
 export default App;
