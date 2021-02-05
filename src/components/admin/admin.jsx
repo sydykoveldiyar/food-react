@@ -1,11 +1,9 @@
-import React from 'react';
+import './admin.css'
 
-const Admin = () => {
+const Admin = () =>{
     return (
-        <div>
-
-        </div>
+        <div className="title">Это страница админа</div>
     );
-};
+}
 
 export default Admin;
