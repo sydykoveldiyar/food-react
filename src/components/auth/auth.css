@@ -1,0 +1,62 @@
+.auth {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth__title {
+    font-family: 'Oregano', sans-serif;
+    font-weight: 400;
+    color: #B80505;
+    font-size: 36px;
+    line-height: 46px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 36px;
+}
+
+
+.auth__input {
+    width: 100%;
+    padding: 6.64px 20px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-bottom: 24px;
+    border: none;
+}
+
+.auth__input::-webkit-input-placeholder {
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000
+}
+
+.auth__btn {
+    width: 100%;
+    border: 1px solid #B80505;
+    height: 35px;
+    background: #B80505;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    margin-top: 22px;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
