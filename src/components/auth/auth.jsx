@@ -32,7 +32,7 @@ const Auth = () => {
         <div className="auth">
             <div className="auth_container container">
                 <div className="auth__content">
-                    <div action="" className="auth__form">
+                    <div className="auth__form">
                         <h1 className="auth__title">CRM Cafe</h1>
                         <input name="login" id="auth__login" type="text" className="auth__input" placeholder="Логин" onChange={handleUser} />
                         <input name="password" id="auth__password" type="password" className="auth__input" placeholder="Пароль" onChange={handleUser} />

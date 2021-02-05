@@ -7,6 +7,7 @@ import Admin from '../components/admin/admin';
 import Waiter from '../components/waiter/waiter';
 import PrivateRoute from "./private-route";
 
+
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
     
