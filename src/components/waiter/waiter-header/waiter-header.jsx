@@ -6,7 +6,7 @@ const WaiterHeader = () => {
             <div class="waiter-header__back-arrow">
                 <a href=""><i class="fas fa-chevron-left"></i></a>
             </div>
-            <p class="waiter-header__title">Столы</p>
+            <p class="waiter-header__title">Список активных заказов</p>
         </header>
     );
 }

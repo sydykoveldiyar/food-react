@@ -4,6 +4,7 @@
     border: none;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .waiter-header__back-arrow{

@@ -2,6 +2,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    background: url("../../static/images/bg.png") no-repeat center/cover;
 }
 
 .container {
