@@ -32,48 +32,10 @@ a{
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.waiter-header{
-    height: 48px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border: none;
-    display: flex;
-    align-items: center;
-}
 
-.waiter-header__back-arrow{
-    padding-left: 13px;
-}
-
-.waiter-header__title{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    padding-left: 19px;
-}
 
 .d-flex{
     display: flex;
-}
-
-.admin__top-menu {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 15px;
-    padding-right: 120px;
-}
-
-.admin__top-menu__btn {
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 0 15px;
-}
-
-.admin__top-menu__btn svg {
-    width: 23px;
-    height: 24px;
-    fill: #766e6a;
 }
 
 .section__title {
