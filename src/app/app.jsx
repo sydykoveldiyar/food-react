@@ -1,24 +1,23 @@
 import React from 'react';
 import './app.css';
 import './fonts.css';
-import {BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Auth from "../components/auth/auth";
-import Admin from '../components/admin/admin';
-import Waiter from '../components/waiter/waiter';
 import PrivateRoute from "./private-route";
-
+import Waiter from "../components/waiter/waiter";
+import Admin from "../components/admin/admin";
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
-    
+
     return (
-        <Auth />
-        <BrowserRouter>
-            <Route path='/' component={Auth} exact/>
-            <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
-            <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
-        </BrowserRouter>
-        
+        <div>
+            <BrowserRouter>
+                <Route path='/' component={Auth} exact />
+                <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
+                <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
+            </BrowserRouter>
+        </div>
     );
 }
 

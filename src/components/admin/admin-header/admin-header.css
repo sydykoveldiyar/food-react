@@ -1,0 +1,20 @@
+.admin__top-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    padding-right: 120px;
+}
+
+.admin__top-menu__btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.admin__top-menu__btn svg {
+    width: 23px;
+    height: 24px;
+    fill: #766e6a;
+}
