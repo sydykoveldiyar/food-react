@@ -1,42 +1,12 @@
-import React from 'react';
-import './app.css';
-import './fonts.css';
-import {BrowserRouter, Route} from "react-router-dom";
+import React from 'react'
+import './app.css'
+import './fonts.css'
 import Auth from "../components/auth/auth";
-import Admin from '../components/admin/admin';
-import Waiter from '../components/waiter/waiter';
-import WaiterTables from '../components/waiter/waiter-tables/waiter-tables';
-import PrivateRoute from "./private-route";
 
 const App = () => {
-    const isLogged = localStorage.getItem('jwtToken') ? true : false;
-    
     return (
-        <BrowserRouter>
-            <Route path='/' component={Auth} exact/>
-            <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
-            <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
-            <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} />
-        </BrowserRouter>
+        <Auth />
     );
-}
-
-export const getErrorMessage = (e) => {
-    if (e == null)
-        return null;
-
-    let error;
-    if (e.response)
-        error = e.response;
-    else if (e.request)
-        error = e.request;
-    else
-        error = e;
-
-    const data = error ? error.data : error;
-    return data && data.message
-        ? data.message
-        : data;
 }
 
 export default App;
