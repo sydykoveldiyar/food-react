@@ -1,0 +1,100 @@
+.admin-tables__content{
+    padding-top: 61px;
+    height: 100vh;
+}
+
+.admin-tables__title{
+    padding-left: 30px;
+}
+
+.table-cards{
+    padding-top: 51px;
+}
+
+.admin-tables__content {
+    width: 100%;
+    background: url("../../../static/images/bg.png") no-repeat center/cover;
+}
+
+.admin-tables__content-head{
+    display: flex;
+    align-items: center;
+}
+
+.table-card-head-img{
+    width: 100%;
+}
+
+.table-card-head-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.add-table-btn{
+    font-size: 16px;
+    line-height: 29px;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    background-color: #04932C;
+    border: none;
+    border-radius: 5px;
+    margin-left: 112px;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+
+.add-table-btn:hover{
+    background-color: #24b44d;
+}
+
+.table-card-info{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.table-card-name{
+    width: 70%;
+    font-size: 18px;
+    line-height: 25px;
+    background-color: #fff;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-card-status{
+    width: 30%;
+    border: none;
+    height: 44px;
+    background-color: #E5E5E5;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.table-card-footer button{
+    height: 44px;
+    font-size: 18px;
+    line-height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.change-btn{
+    width: 50%;
+    background-color: #24b44d;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.delete-btn{
+    width: 50%;
+    background-color: #B80505;
+    border-radius: 0px 0px 10px 0px;
+}
