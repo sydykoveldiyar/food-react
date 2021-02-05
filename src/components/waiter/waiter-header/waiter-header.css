@@ -4,6 +4,7 @@
     border: none;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .waiter-header__back-arrow{
@@ -15,4 +16,16 @@
     font-size: 18px;
     line-height: 25px;
     padding-left: 19px;
+}
+
+.basket-img{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.waiter-header__left-side{
+    display: flex;
+    align-items: center;
 }

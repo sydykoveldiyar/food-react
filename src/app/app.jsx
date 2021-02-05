@@ -7,6 +7,9 @@ import PrivateRoute from "./private-route";
 import Waiter from "../components/waiter/waiter";
 import Admin from "../components/admin/admin";
 import WaiterTables from '../components/waiter/waiter-active-orders/waiter-tables/waiter-tables';
+import MenuCategories from "../components/waiter/menu-categories/menu-categories";
+import DishOrder from "../components/waiter/dish-list/dish-order";
+import Basket from "../components/waiter/dish-list/basket";
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
@@ -18,6 +21,9 @@ const App = () => {
                 <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} />
                 <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} />
                 <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} />
+                <PrivateRoute path='/menu-categories' auth={isLogged} component={() => <MenuCategories />} />
+                <PrivateRoute path='/dish-order' auth={isLogged} component={() => <DishOrder />} />
+                <PrivateRoute path='/basket' auth={isLogged} component={() => <Basket />} />
             </BrowserRouter>
         </div>
     );
