@@ -6,7 +6,7 @@ import Auth from "../components/auth/auth";
 import PrivateRoute from "./private-route";
 import Waiter from "../components/waiter/waiter";
 import Admin from "../components/admin/admin";
-import WaiterTables from '../components/waiter/waiter-active-orders/waiter-tables/waiter-tables';
+import WaiterTables from '../components/waiter/waiter-tables/waiter-tables';
 import MenuCategories from "../components/waiter/menu-categories/menu-categories";
 import DishOrder from "../components/waiter/dish-list/dish-order";
 import Basket from "../components/waiter/dish-list/basket";

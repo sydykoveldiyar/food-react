@@ -83,3 +83,11 @@
 .status-danger{
     color: #B80505;
 }
+
+.order-list__table-name{
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #b884d6;
+}

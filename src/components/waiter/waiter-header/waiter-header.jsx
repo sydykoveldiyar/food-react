@@ -4,14 +4,14 @@ import { NavLink } from 'react-router-dom';
 
 const WaiterHeader = () => {
     return (
-        <header className="waiter-header">
-            <div className="waiter-header__left-side">
-                <div className="waiter-header__back-arrow">
-                    <a href=""><i class="fas fa-chevron-left"></i></a>
+        <header classNameName="waiter-header">
+            <div classNameName="waiter-header__left-side">
+                <div classNameName="waiter-header__back-arrow">
+                    <a href=""><i className="fas fa-chevron-left"></i></a>
                 </div>
-                <p className="waiter-header__title">Список активных заказов</p>
+                <p classNameName="waiter-header__title">Список активных заказов</p>
             </div>
-            <NavLink to="/basket" className="basket-img">
+            <NavLink to="/basket" classNameName="basket-img">
                 <img src={basket} alt=""/>
             </NavLink>
         </header>

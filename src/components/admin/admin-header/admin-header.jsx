@@ -2,8 +2,8 @@ import './admin-header.css';
 
 const AdminHeader = () => {
     return (
-        <div class="admin__top-menu">
-            <button class="admin__top-menu__btn">
+        <div className="admin__top-menu">
+            <button className="admin__top-menu__btn">
                 <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     x="0px" y="0px" viewBox="0 0 512 512">
                     <g>
@@ -52,7 +52,7 @@ const AdminHeader = () => {
                     </g>
                 </svg>
             </button>
-            <button class="admin__top-menu__btn">
+            <button className="admin__top-menu__btn">
                 <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     x="0px" y="0px" viewBox="0 0 512 512">
                     <g>
