@@ -12,6 +12,7 @@ const Auth = () => {
             localStorage.setItem('jwtToken', response.data.access_token);
             localStorage.setItem('userName', response.data.username);
             localStorage.setItem('role', response.data.role);
+            localStorage.setItem('order', {});
             const userRole = localStorage.getItem('role');
             switch (userRole) {
                 case '1':

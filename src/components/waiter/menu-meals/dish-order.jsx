@@ -42,7 +42,7 @@ const DishOrder = () => {
                             <h3 className="dish-list-item__title">{item.name}</h3>
                             <div className="dish-list-item__bottom-side">
                                 <div className="dish-list-item__left-side">
-                                    <div className="dish-list-item__price justify-align"><p>{item.price}</p></div>
+                                    <div className="dish-list-item__price justify-align"><p>{item.price * item.orderedQuantity}</p></div>
                                     <button className="dish-list-item__plus-minus justify-align"><span>-</span></button>
                                     <div className="dish-list-item__count justify-align"><p>{item.orderedQuantity}</p></div>
                                     <button className="dish-list-item__plus-minus justify-align" onClick={() => upItemCount(item)}>+</button>

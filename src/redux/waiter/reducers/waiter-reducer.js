@@ -3,7 +3,8 @@ const initialState = {
     tables: [],
     categories: [],
     categoryMeals: [],
-    basket: []
+    basket: [],
+    cheque: []
 }
 
 export const waiterReducer = (state = initialState, action) => {
@@ -20,6 +21,8 @@ export const waiterReducer = (state = initialState, action) => {
             return { ...state, basket: action.basket };
         case "CREATE_ORDER":
             return { ...state, activeOrders: action.order };
+        case "CLOSE_CHEQUE":
+            return {...state, cheque: action.cheque}
         default:
             return state
     }

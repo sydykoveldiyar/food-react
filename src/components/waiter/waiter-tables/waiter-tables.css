@@ -20,8 +20,9 @@
     border: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
 }
-
 .tables__table-btn{
     cursor: pointer;
     outline: none;
@@ -36,18 +37,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .3s;
+}
+
+.tables__table-btn:hover{
+    opacity: 0.8;
 }
 
 .tables__active{
     background-color: #04932C;
 }
-
+.tables__active:hover{
+    background-color: #18be47;
+}
 .tables__free{
     background-color: #0357A5;
 }
-
+.tables__free:hover{
+    background-color: #2275c2;
+}
 .tables__booked{
     background-color: #B80505;
+}
+.tables__booked:hover{
+    background-color: #e22222;
 }
 
 .tables__all{
@@ -72,4 +85,9 @@
     background: #04932C;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    transition: .3s;
+}
+
+.tables__all-btn:hover{
+    background-color: #18be47;
 }

@@ -23,8 +23,7 @@ const MenuCategories = () => {
                 transitionAppear={true}
                 transitionAppearTimeout={500}
                 transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}
-            >
+                transitionLeaveTimeout={500}>
                 <div className="menu">
                     { categories.map(item => (
                         <NavLink to="/dish-order" className="menu-item" style={{ backgroundImage: `url(${item.image})` }} onClick={() => setCategoryMeals(item.id)}>

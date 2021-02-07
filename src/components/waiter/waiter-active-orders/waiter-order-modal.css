@@ -29,15 +29,10 @@
 .order-popup__condition {
     font-weight: 500;
     font-size: 14px;
-    color: #04932C;
     text-transform: uppercase;
     width: 115px;
     display: flex;
     align-items: center;
-}
-
-.order-popup__condition svg {
-    margin-right: 10px;
 }
 
 .order-popup__condition-in-process {

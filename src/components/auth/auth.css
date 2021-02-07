@@ -37,6 +37,7 @@
     border-radius: 6px;
     margin-bottom: 24px;
     border: none;
+    outline: none;
 }
 
 .auth__input::-webkit-input-placeholder {
@@ -59,5 +60,10 @@
     font-size: 12px;
     line-height: 16px;
     color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
 }
-
+.auth__btn:hover{
+    background: #e72e2e;
+}

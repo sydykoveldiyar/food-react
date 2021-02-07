@@ -51,23 +51,33 @@
 .dish-list-item__plus-minus {
     font-weight: 400;
     font-size: 18px;
-    color: #000000;
-    background: #04932C;
+    color: white;
+    background-color: #04932C;
     border: none;
     cursor: pointer;
     outline: none;
+    transition: .3s;
+}
+
+.dish-list-item__plus-minus:hover{
+    background-color: #10b83f;
 }
 
 .dish-list__done-btn {
     width: 57px;
     height: 31px;
     border: none;
-    background: #E5E5E5;
+    background-color: #E5E5E5;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     max-height: 31px;
     outline: none;
     cursor: pointer;
+    transition: .3s;
+}
+
+.dish-list__done-btn:hover{
+    background-color: #b3b3b3;
 }
 
 .dish-list__btn-wrapper {
@@ -88,6 +98,11 @@
     outline: none;
     border: none;
     cursor: pointer;
+    transition: .3s;
+}
+
+.dish-list__delete-btn:hover{
+    background: #da1717;
 }
 
 .dish-list__bottom-buttons {
@@ -111,18 +126,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s;
 }
 
 .dish-list__next-btn {
     background: #04932C;
 }
 
+.dish-list__next-btn:hover{
+    background-color: #10b83f;
+}
+
 .dish-list__accept-btn {
     background: #04932C;
+    transition: .3s;
+}
+
+.dish-list__clear-btn {
+    background: #ccd81d;
+    transition: .3s;
+}
+
+.dish-list__clear-btn:hover{
+    background: #aab41a;
+}
+
+.dish-list__accept-btn:hover{
+    background: #0fc542;
 }
 
 .dish-list__add-btn {
     background: #B80505;
+}
+
+.dish-list__add-btn:hover {
+    background: #da1717;
 }
 
 .basket-item {

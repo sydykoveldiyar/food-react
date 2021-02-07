@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { getActiveOrders, getTables, categoriesAPI, getCategoryMeals, createOrderAPI } from '../../../components/api/api';
+import { getActiveOrders, getTables, categoriesAPI, getCategoryMeals, createOrderAPI, closeChequeAPI } from '../../../components/api/api';
 
 export const setActiveOrders = () => {
     return async (dispatch) => {
@@ -39,5 +39,12 @@ export const createOrder = (order) => {
     return async (dispatch) => {
         const { data: result } = await axios.post(`${createOrderAPI}`, order);
         return dispatch({ type: "CREATE_ORDER", result })
+    }
+}
+
+export const closeChequeAction = (orderId) => {
+    return async (dispatch) => {
+        const { data: cheque } = await axios.post(`${closeChequeAPI}?orderId=${orderId}`);
+        return dispatch({ type: "CLOSE_CHEQUE", cheque })
     }
 }

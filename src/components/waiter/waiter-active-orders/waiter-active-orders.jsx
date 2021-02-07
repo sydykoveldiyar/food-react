@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Modal from "react-modal";
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveOrders } from "../../../redux/waiter/actions/waiter-actions";
+import { setActiveOrders, closeChequeAction } from "../../../redux/waiter/actions/waiter-actions";
 import './waiter-active-orders.css';
 import './waiter-order-modal.css';
+import Modal from "react-modal";
 
 const customStyles = {
     content: {
@@ -18,11 +18,14 @@ const customStyles = {
     },
 };
 
+
 const WaiterActiveOrders = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [meals, setModalMeals] = useState([]);
+    const [orderId, setOrderId] = useState(0);
 
-    const openModal = (meals) => {
+    const openModal = (orderId, meals) => {
+        setOrderId(orderId);
         setModalMeals(meals);
         setModalIsOpen(true);
     }
@@ -39,6 +42,31 @@ const WaiterActiveOrders = () => {
             mealOrders: []
         }
         localStorage.setItem('order', JSON.stringify(order));
+    }
+
+    const closeCheque = () => {
+        if(window.confirm("Закрыть счет?")){
+            dispatch(closeChequeAction(orderId));
+            closeModal();
+        }
+    }
+
+    const setOrderStatusColor = (status) => {
+        if (status == 0)
+            return '#0357A5';
+        else if (status == 1)
+            return '#B80505';
+        else
+            return '#04932C';
+    }
+
+    const setMealStatusColor = (status) => {
+        if (status == 0)
+            return '#0357A5';
+        else if (status == 1)
+            return '#04932C ';
+        else
+            return '#B80505';
     }
 
     const activeOrders = useSelector(s => s.waiter.activeOrders);
@@ -59,30 +87,27 @@ const WaiterActiveOrders = () => {
             <div className="order-list__orders">
                 {activeOrders.map(item => (
                     <div key={item.id} className="order-list__order">
-                        <p className="order-list__item-name"><button className="order-list__table-name" onClick={() => openModal(item.meals)}>{item.tableName}</button></p>
-                        <p className="order-list__item-status status-success">{item.status}</p>
+                        <p className="order-list__item-name"><button className="order-list__table-name" onClick={() => openModal(item.id, item.meals)}>{item.tableName}</button></p>
+                        <p className="order-list__item-status" style={{ color: `${setOrderStatusColor(item.status)}` }}>{item.status}</p>
                     </div>
                 ))}
             </div>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles} closeTimeoutMS={300}>
-                    <div className="order-popup">
-                        {meals.map(item => (
-                            <div className="order-popup__item">
-                                <p className="order-popup__title">{item.name}</p>
-                                <p className="order-popup__condition">
-                                    <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0" />
-                                    </svg>
-                                    {item.status}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="order-popup__buttons">
-                        <button className="order-popup__btn order-popup__add-btn">Добавить</button>
-                        <button className="order-popup__btn order-popup__close-bill-btn">Закрыть счет</button>
-                    </div>
-                </Modal>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles} closeTimeoutMS={300}>
+                <div className="order-popup">
+                    {meals.map(item => (
+                        <div className="order-popup__item">
+                            <p className="order-popup__title">{item.name}</p>
+                            <p className="order-popup__condition" style={{ color: `${setMealStatusColor(item.status)}` }}>
+                                {item.status}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+                <div className="order-popup__buttons">
+                    <button className="order-popup__btn order-popup__add-btn">Добавить</button>
+                    <button className="order-popup__btn order-popup__close-bill-btn" onClick={() => closeCheque()}>Закрыть счет</button>
+                </div>
+            </Modal>
         </section>
     );
 }

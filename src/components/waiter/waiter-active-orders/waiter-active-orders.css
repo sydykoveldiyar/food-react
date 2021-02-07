@@ -22,7 +22,7 @@
 }
 
 .order-list__add-order-btn:hover{
-    background-color: #dd7c7c;
+    background-color: #d4d3d3;
 }
 
 .order-list__add-order-btn svg{
@@ -89,4 +89,8 @@
     outline: none;
     color: #b884d6;
     padding: 23px 50px 23px 24px;
+    transition: .3s;
+}
+.order-list__table-name:hover{
+    font-size: 16px;
 }

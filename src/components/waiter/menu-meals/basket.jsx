@@ -15,7 +15,7 @@ const Basket = () => {
         dispatch(setBasket(basket));
         setMealOrders(basket?.mealOrders);
     }, []);
-    
+
     useEffect(() => {
         getTotalPrice();
     });
@@ -24,11 +24,18 @@ const Basket = () => {
 
     const createNewOrder = async () => {
         try {
+            let order = JSON.parse(localStorage.getItem('order'));
+            if (order.mealOrders.length <= 0) {
+                window.alert("Корзина пуста");
+                return;
+            }
             if (window.confirm("Подтвердите заказ")) {
                 await dispatch(createOrder(order));
                 window.alert("Заказ был создан");
+                order.mealOrders = [];
+                localStorage.setItem('order', JSON.stringify(order));
+                setMealOrders([]);
                 window.location.href = '/waiter';
-                localStorage.removeItem('order');
             }
         } catch (error) {
             console.log(error);
@@ -36,10 +43,19 @@ const Basket = () => {
         }
     };
 
+    const clearBasket = () => {
+        if (window.confirm("Подтвердите действие")){
+            let order = JSON.parse(localStorage.getItem('order'));
+            order.mealOrders = [];
+            localStorage.setItem('order', JSON.stringify(order));
+            setMealOrders([]);
+        }
+    }
+
     const [totalPrice, setTotalPrice] = useState(0);
     const getTotalPrice = () => {
         let sum = 0;
-        for(let i = 0; i < mealOrders.length; i++)
+        for (let i = 0; i < mealOrders.length; i++)
             sum += mealOrders[i].price * mealOrders[i].orderedQuantity;
         setTotalPrice(sum);
     }
@@ -54,7 +70,7 @@ const Basket = () => {
                 transitionLeaveTimeout={500}
             >
                 <section className="dish-list">
-                    { mealOrders.length > 0 ? mealOrders.map(item => (
+                    {mealOrders.length > 0 ? mealOrders.map(item => (
                         <div key={item.id} className="dish-list-item basket-item">
                             <h3 className="dish-list-item__title">{item.name}</h3>
                             <div className="dish-list-item__bottom-side basket-item__bottom-side">
@@ -70,7 +86,7 @@ const Basket = () => {
                             </div>
                         </div>
                     )) : <div className="basket-empty">
-                        Корзина пуста
+                            Корзина пуста
                     </div>}
                     <div>
                         <div className="dish-list-item basket-item basket-item__result">
@@ -79,6 +95,7 @@ const Basket = () => {
                         </div>
                         <div className="dish-list__bottom-buttons">
                             <button className="dish-list__bottom-btn dish-list__accept-btn" onClick={createNewOrder}>Подтвердить</button>
+                            <button className="dish-list__bottom-btn dish-list__clear-btn" onClick={clearBasket}>Очистить</button>
                             <NavLink to="/menu-categories" className="dish-list__bottom-btn dish-list__add-btn">Добавить</NavLink>
                         </div>
                     </div>
