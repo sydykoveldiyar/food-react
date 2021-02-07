@@ -23,19 +23,6 @@
     height: 100%;
 }
 
-.menu-item__breakfast {
-    background-image: url("../../../static/images/menu-item__breakfast.png");
-}
-.menu-item__first {
-    background-image: url("../../../static/images/menu-item__first.png");
-}
-.menu-item__second {
-    background-image: url("../../../static/images/menu-item__second.png");
-}
-.menu-item__salads {
-    background-image: url("../../../static/images/menu-item__salads.png");
-}
-
 .menu-item__title {
     font-family: "Avenir Next", sans-serif;
     font-weight: 500;

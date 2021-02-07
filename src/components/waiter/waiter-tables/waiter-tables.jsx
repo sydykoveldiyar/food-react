@@ -12,6 +12,13 @@ const WaiterTables = () => {
         dispatch(setTables());
     });
     const tables = useSelector(s => s.waiter.tables);
+
+    const [order, setOrder] = useState({});
+    const setTable = (tableId) => {
+        setOrder(localStorage.getItem('order'));
+        setOrder(order.tableId = tableId);
+    };
+
     return (
         <section className="tables">
         <div className="tables__container">
@@ -22,7 +29,7 @@ const WaiterTables = () => {
             </div>
             <div className="tables__row grid__col-4">
                 { tables.map(item => (
-                    <NavLink key={item.id} to="/menu-categories" className="tables__table-btn tables__active">{item.name}</NavLink>
+                    <NavLink key={item.id} to="/menu-categories" className="tables__table-btn tables__active" onClick={() => setTable(item.id)}>{item.name}</NavLink>
                 ))}
             </div>
             <div className="tables__all">

@@ -2,6 +2,9 @@ import React from 'react';
 import './dish-list.css'
 
 const Basket = () => {
+
+    
+
     return (
         <section className="dish-list">
             <div className="dish-list-item basket-item">
