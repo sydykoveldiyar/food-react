@@ -28,3 +28,9 @@ export const setMeals = (id) => {
         return dispatch({type: "SET_MEALS", categoryMeals})
     }
 }
+
+export const setBasket = (basket) => {
+    return async (dispatch) => {
+        return dispatch({type: "SET_BASKET", basket})
+    }
+}

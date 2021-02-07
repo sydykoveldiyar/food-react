@@ -13,10 +13,11 @@ const WaiterTables = () => {
     });
     const tables = useSelector(s => s.waiter.tables);
 
-    const [order, setOrder] = useState({});
     const setTable = (tableId) => {
-        setOrder(localStorage.getItem('order'));
-        setOrder(order.tableId = tableId);
+       let order = JSON.parse(localStorage.getItem('order'));
+       order.tableId = tableId;
+       const localOrder = JSON.stringify(order);
+       localStorage.setItem('order', localOrder);
     };
 
     return (

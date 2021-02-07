@@ -34,7 +34,7 @@ const WaiterActiveOrders = () => {
 
     const createOrder = () => {
         const order = {
-            tableId: null,
+            tableId: 0,
             comment: '',
             mealOrders: []
         }

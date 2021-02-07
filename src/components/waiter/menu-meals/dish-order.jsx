@@ -1,10 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './dish-list.css';
 import WaiterHeader from '../waiter-header/waiter-header'
 import { useDispatch, useSelector } from "react-redux";
 
 const DishOrder = () => {
     const meals = useSelector(s => s.waiter.categoryMeals);
+
+    const addMealsToBasket = (meal) => {
+        if (meal.orderedQuantity === 0) {
+            window.alert("Укажите количество");
+            return;
+        }
+        let order = JSON.parse(localStorage.getItem('order'));
+        order.mealOrders.push(meal);
+        localStorage.setItem('order', JSON.stringify(order));
+        console.log(order);
+    }
+
+    const upItemCount = (item) => {
+        item.orderedQuantity++;
+    };
+
     return (
         <div>
             <WaiterHeader />
@@ -16,11 +32,11 @@ const DishOrder = () => {
                             <div className="dish-list-item__left-side">
                                 <div className="dish-list-item__price justify-align"><p>{item.price}</p></div>
                                 <button className="dish-list-item__plus-minus justify-align"><span>-</span></button>
-                                <div className="dish-list-item__count justify-align"><p>1</p></div>
-                                <button className="dish-list-item__plus-minus justify-align">+</button>
+                                <div className="dish-list-item__count justify-align"><p>{item.orderedQuantity}</p></div>
+                                <button className="dish-list-item__plus-minus justify-align" onClick={() => upItemCount(item)}>+</button>
                             </div>
                             <div className="dish-list__btn-wrapper">
-                                <button className="dish-list__done-btn">
+                                <button className="dish-list__done-btn" onClick={() => addMealsToBasket(item)}>
                                     <svg width="21" height="15" viewBox="0 0 21 15" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect width="21" height="15" fill="url(#pattern0)" />
