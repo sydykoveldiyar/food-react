@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './dish-list.css'
 import { NavLink } from "react-router-dom";
-import { setBasket } from "../../../redux/waiter/actions/waiter-actions";
+import { setBasket, createOrder } from "../../../redux/waiter/actions/waiter-actions";
 import { useDispatch, useSelector } from 'react-redux';
 
 const Basket = () => {
@@ -12,37 +12,67 @@ const Basket = () => {
     useEffect(async () => {
         const basket = await JSON.parse(localStorage.getItem('order'));
         dispatch(setBasket(basket));
-        setMealOrders(basket.mealOrders);
+        setMealOrders(basket?.mealOrders);
     }, []);
     
-    let basket = useSelector(s => s.basket);
+    useEffect(() => {
+        getTotalPrice();
+    });
+
+    let order = useSelector(s => s.waiter.basket);
+
+    const createNewOrder = async () => {
+        try {
+            if (window.confirm("Подтвердите заказ")) {
+                await dispatch(createOrder(order));
+                window.alert("Заказ был создан");
+                window.location.href = '/waiter';
+                localStorage.removeItem('order');
+            }
+        } catch (error) {
+            console.log(error);
+            window.alert(error);
+        }
+    };
+
+    const [totalPrice, setTotalPrice] = useState(0);
+    const getTotalPrice = () => {
+        let sum = 0;
+        for(let i = 0; i < mealOrders.length; i++)
+            sum += mealOrders[i].price * mealOrders[i].orderedQuantity;
+        setTotalPrice(sum);
+    }
 
     return (
         <section className="dish-list">
-            { mealOrders.map(item => (
+            { mealOrders.length > 0 ? mealOrders.map(item => (
                 <div key={item.id} className="dish-list-item basket-item">
-                <h3 className="dish-list-item__title">{item.name}</h3>
-                <div className="dish-list-item__bottom-side basket-item__bottom-side">
-                    <div className="dish-list-item__left-side">
-                        <div className="dish-list-item__price justify-align"><p>250,00</p></div>
-                        <button className="dish-list-item__plus-minus justify-align"><span>-</span></button>
-                        <div className="dish-list-item__count justify-align"><p>1</p></div>
-                        <button className="dish-list-item__plus-minus justify-align">+</button>
-                    </div>
-                    <div className="dish-list__btn-wrapper">
-                        <button className="dish-list__delete-btn">Удалить</button>
+                    <h3 className="dish-list-item__title">{item.name}</h3>
+                    <div className="dish-list-item__bottom-side basket-item__bottom-side">
+                        <div className="dish-list-item__left-side">
+                            <div className="dish-list-item__price justify-align"><p>{item.price * item.orderedQuantity}</p></div>
+                            <button className="dish-list-item__plus-minus justify-align"><span>-</span></button>
+                            <div className="dish-list-item__count justify-align"><p>{item.orderedQuantity}</p></div>
+                            <button className="dish-list-item__plus-minus justify-align">+</button>
+                        </div>
+                        <div className="dish-list__btn-wrapper">
+                            <button className="dish-list__delete-btn">Удалить</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            ))}
-            <div className="dish-list-item basket-item basket-item__result">
-                <p className="basket-item__result-amount">4 товара</p>
-                <p className="basket-item__result-price">750,00</p>
-            </div>
-            <div className="dish-list__bottom-buttons">
-                <button className="dish-list__bottom-btn dish-list__accept-btn">Подтвердить</button>
-                <NavLink to="/menu-categories" className="dish-list__bottom-btn dish-list__add-btn">Добавить</NavLink>
-            </div>
+            )) : <div className="basket-empty">
+                    Корзина пуста
+                </div>}
+                <div>
+                    <div className="dish-list-item basket-item basket-item__result">
+                        <p className="basket-item__result-amount">Блюд: {mealOrders.length}</p>
+                        <p className="basket-item__result-price">Цена: {totalPrice}</p>
+                    </div>
+                    <div className="dish-list__bottom-buttons">
+                        <button className="dish-list__bottom-btn dish-list__accept-btn" onClick={createNewOrder}>Подтвердить</button>
+                        <NavLink to="/menu-categories" className="dish-list__bottom-btn dish-list__add-btn">Добавить</NavLink>
+                    </div>
+                </div>
         </section>
     )
 };

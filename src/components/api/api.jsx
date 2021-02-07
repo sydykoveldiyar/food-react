@@ -5,3 +5,4 @@ export const getActiveOrders = `${baseAPI}/Waiter/activeOrders`;
 export const getTables = `${baseAPI}/Waiter/tables`;
 export const categoriesAPI = `${baseAPI}/categories`;
 export const getCategoryMeals = `${baseAPI}/Waiter/categoryMeals`;
+export const createOrderAPI = `${baseAPI}/Waiter/createOrder`;

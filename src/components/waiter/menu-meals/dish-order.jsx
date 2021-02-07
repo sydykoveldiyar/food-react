@@ -12,9 +12,12 @@ const DishOrder = () => {
             return;
         }
         let order = JSON.parse(localStorage.getItem('order'));
-        order.mealOrders.push(meal);
+        order.mealOrders.push({
+            mealId: meal.id,
+            orderedQuantity: meal.orderedQuantity,
+            price: meal.price
+        });
         localStorage.setItem('order', JSON.stringify(order));
-        console.log(order);
     }
 
     const upItemCount = (item) => {

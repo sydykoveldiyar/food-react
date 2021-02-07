@@ -17,7 +17,9 @@ export const waiterReducer = (state = initialState, action) => {
         case "SET_MEALS":
             return { ...state, categoryMeals: action.categoryMeals };
         case "SET_BASKET":
-            return {...state, basket: action.basket};
+            return { ...state, basket: action.basket };
+        case "CREATE_ORDER":
+            return { ...state, activeOrders: action.order };
         default:
             return state
     }

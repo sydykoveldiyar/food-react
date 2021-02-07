@@ -137,3 +137,10 @@
     font-weight: 500;
     font-size: 16px;
 }
+
+.basket-empty{
+    padding-top: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
