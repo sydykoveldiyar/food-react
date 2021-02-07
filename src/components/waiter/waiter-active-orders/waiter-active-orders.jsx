@@ -8,11 +8,11 @@ import './waiter-order-modal.css';
 
 const customStyles = {
     content: {
-        top: '35%',
-        left: '40%',
+        top: '40%',
+        left: '50%',
         right: 'auto',
         bottom: 'auto',
-        transform: 'translate(-40%, -10%)',
+        transform: 'translate(-50%, -50%)',
         padding: '0',
         border: 'none'
     },
@@ -64,26 +64,25 @@ const WaiterActiveOrders = () => {
                     </div>
                 ))}
             </div>
-
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}>
-                <div className="order-popup">
-                    {meals.map(item => (
-                        <div className="order-popup__item">
-                            <p className="order-popup__title">{item.name}</p>
-                            <p className="order-popup__condition">
-                                <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0" />
-                                </svg>
-                                {item.status}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-                <div className="order-popup__buttons">
-                    <button className="order-popup__btn order-popup__add-btn">Добавить</button>
-                    <button className="order-popup__btn order-popup__close-bill-btn">Закрыть счет</button>
-                </div>
-            </Modal>
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles} closeTimeoutMS={300}>
+                    <div className="order-popup">
+                        {meals.map(item => (
+                            <div className="order-popup__item">
+                                <p className="order-popup__title">{item.name}</p>
+                                <p className="order-popup__condition">
+                                    <svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0" />
+                                    </svg>
+                                    {item.status}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="order-popup__buttons">
+                        <button className="order-popup__btn order-popup__add-btn">Добавить</button>
+                        <button className="order-popup__btn order-popup__close-bill-btn">Закрыть счет</button>
+                    </div>
+                </Modal>
         </section>
     );
 }

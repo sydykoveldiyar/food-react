@@ -59,8 +59,6 @@
 .order-list__item-name{
     font-weight: 500;
     font-size: 14px;
-    line-height: 19px;
-    padding: 23px 0 23px 24px;
 }
 
 .order-list__item-status{
@@ -90,4 +88,5 @@
     cursor: pointer;
     outline: none;
     color: #b884d6;
+    padding: 23px 50px 23px 24px;
 }
