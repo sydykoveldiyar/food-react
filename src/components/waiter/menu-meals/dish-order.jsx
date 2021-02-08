@@ -28,6 +28,7 @@ const DishOrder = () => {
 
     return (
         <div>
+            <WaiterHeader href={'menu-categories'} title={'Список блюд'} hasCart={true}/>
             <ReactCSSTransitionGroup
                 transitionName="slide"
                 transitionAppear={true}
@@ -35,9 +36,8 @@ const DishOrder = () => {
                 transitionEnterTimeout={500}
                 transitionLeaveTimeout={500}
             >
-                <WaiterHeader />
                 <section className="dish-list">
-                    {meals.map(item => (
+                    {meals.length > 0 ? meals.map(item => (
                         <div className="dish-list-item" key={item.id}>
                             <h3 className="dish-list-item__title">{item.name}</h3>
                             <div className="dish-list-item__bottom-side">
@@ -66,10 +66,11 @@ const DishOrder = () => {
                                 </div>
                             </div>
                         </div>
-                    ))}
-                    <div className="dish-list__bottom-buttons">
-                        <button className="dish-list__bottom-btn dish-list__next-btn">Далее</button>
-                    </div>
+                    )) : 
+                    <div className="dish-list__empty">
+                        <p className="">Список пуст</p>
+                    </div>}
+                    
                 </section>
             </ReactCSSTransitionGroup>
         </div>

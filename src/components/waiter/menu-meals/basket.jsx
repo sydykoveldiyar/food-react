@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './dish-list.css'
+import WaiterHeader from '../waiter-header/waiter-header'
 import { NavLink } from "react-router-dom";
 import { setBasket, createOrder } from "../../../redux/waiter/actions/waiter-actions";
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,8 +20,6 @@ const Basket = () => {
     useEffect(() => {
         getTotalPrice();
     });
-
-    let order = useSelector(s => s.waiter.basket);
 
     const createNewOrder = async () => {
         try {
@@ -62,6 +61,7 @@ const Basket = () => {
 
     return (
         <div>
+            <WaiterHeader href={'menu-categories'} title={'Корзина'} hasCart={false}/>
             <ReactCSSTransitionGroup
                 transitionName="slide"
                 transitionAppear={true}
@@ -102,7 +102,6 @@ const Basket = () => {
                 </section>
             </ReactCSSTransitionGroup>
         </div>
-
     )
 };
 

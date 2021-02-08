@@ -16,6 +16,7 @@
     font-size: 18px;
     line-height: 25px;
     padding-left: 19px;
+    color: black;
 }
 
 .basket-img{
@@ -28,4 +29,8 @@
 .waiter-header__left-side{
     display: flex;
     align-items: center;
+}
+
+.waiter-header__back-arrow img{
+    width: 25px;
 }

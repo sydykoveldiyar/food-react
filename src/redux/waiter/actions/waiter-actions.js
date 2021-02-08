@@ -48,3 +48,9 @@ export const closeChequeAction = (orderId) => {
         return dispatch({ type: "CLOSE_CHEQUE", cheque })
     }
 }
+
+export const filterTables = (filtered) => {
+    return async (dispatch) => {
+        return dispatch({ type: "FILTER_TABLES", filtered })
+    }
+}

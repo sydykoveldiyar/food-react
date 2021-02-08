@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import WaiterHeader from '../waiter-header/waiter-header'
 import './menu-categories.css'
 import { NavLink } from "react-router-dom";
 import { setCategories, setMeals } from "../../../redux/waiter/actions/waiter-actions";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 
 const MenuCategories = () => {
     const dispatch = useDispatch();
@@ -18,6 +20,7 @@ const MenuCategories = () => {
     };
     return (
         <div>
+            <WaiterHeader href={'waiter-tables'} title={'Меню кухни'} hasCart={false}/>
             <ReactCSSTransitionGroup
                 transitionName="slide"
                 transitionAppear={true}

@@ -1,9 +1,8 @@
 import './waiter.css'
-import WaiterHeader from "./waiter-header/waiter-header";
 import WaiterActiveOrders from "./waiter-active-orders/waiter-active-orders";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-const Waiter = () =>{
+const Waiter = () => {
     return (
         <div>
             <ReactCSSTransitionGroup
@@ -13,10 +12,8 @@ const Waiter = () =>{
                 transitionEnterTimeout={500}
                 transitionLeaveTimeout={500}
             >
-                <WaiterHeader />
                 <WaiterActiveOrders />
             </ReactCSSTransitionGroup>
-
         </div>
     );
 }

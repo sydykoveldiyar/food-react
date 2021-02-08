@@ -1,6 +1,7 @@
 const initialState = {
     activeOrders: [],
     tables: [],
+    filteredTables: [],
     categories: [],
     categoryMeals: [],
     basket: [],
@@ -23,6 +24,9 @@ export const waiterReducer = (state = initialState, action) => {
             return { ...state, activeOrders: action.order };
         case "CLOSE_CHEQUE":
             return {...state, cheque: action.cheque}
+        case "FILTER_TABLES":{
+            return {...state, filteredTables: action.filtered }
+        }
         default:
             return state
     }
