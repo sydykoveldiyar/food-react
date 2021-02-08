@@ -5,12 +5,13 @@ import { NavLink } from "react-router-dom";
 import { setBasket, createOrder } from "../../../redux/waiter/actions/waiter-actions";
 import { useDispatch, useSelector } from 'react-redux';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import { removeElement } from "../../../app/app";
 
 const Basket = () => {
 
     const dispatch = useDispatch();
     const [mealOrders, setMealOrders] = useState([]);
-
+    const basket = useSelector(s => s.waiter.basket);
     useEffect(async () => {
         const basket = await JSON.parse(localStorage.getItem('order'));
         dispatch(setBasket(basket));
@@ -19,7 +20,7 @@ const Basket = () => {
 
     useEffect(() => {
         getTotalPrice();
-    });
+    }, []);
 
     const createNewOrder = async () => {
         try {

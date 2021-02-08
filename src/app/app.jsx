@@ -49,4 +49,10 @@ export const getErrorMessage = (e) => {
         : data;
 }
 
+export const removeElement = (array, elem) => {
+    var index = array.indexOf(elem);
+    if (index > -1)
+        array.splice(index, 1);
+}
+
 export default App;

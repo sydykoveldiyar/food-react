@@ -34,7 +34,7 @@ const WaiterActiveOrders = () => {
 
     useEffect(() => {
         dispatch(setActiveOrders());
-    });
+    }, []);
 
     const createOrder = () => {
         const order = {

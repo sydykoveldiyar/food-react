@@ -12,7 +12,7 @@ const MenuCategories = () => {
 
     useEffect(() => {
         dispatch(setCategories());
-    });
+    }, []);
 
     const categories = useSelector(s => s.waiter.categories);
     const setCategoryMeals = (id) => {
