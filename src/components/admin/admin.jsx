@@ -1,9 +1,9 @@
 import './admin.css'
-import SalesOverview from "../admin/admin-statistic/sales-overview/sales-overview";
+import OrdersOverview from "../admin/admin-statistic/orders-overview/orders-overview";
 
 const Admin = () =>{
     return (
-        <SalesOverview />
+        <OrdersOverview />
     );
 }
 

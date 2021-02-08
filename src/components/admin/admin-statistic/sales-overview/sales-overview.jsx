@@ -25,6 +25,7 @@ const SalesOverview = () => {
     const sales = useSelector(s => s.admin.sales);
     const topMeals = useSelector(s => s.admin.topMeals);
     const topWaiters = useSelector(s => s.admin.topWaiters);
+
     return (
         <div>
             <AdminHeader />
@@ -66,7 +67,7 @@ const SalesOverview = () => {
                             </div>
                         </div>
                         <div className="top-charts">
-                            <Top title={'Топ официантов'} list={topWaiters} />
+                            <Top className="top-meals" title={'Топ официантов'} list={topWaiters} />
                             <div className="chart">
 
                             </div>

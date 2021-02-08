@@ -3,7 +3,8 @@ const initialState = {
     sales: [],
     topMeals: [],
     topWaiters: [],
-    orders: []
+    orders: [],
+    cookedMeals: []
 }
 
 export const adminReducer = (state = initialState, action) => {

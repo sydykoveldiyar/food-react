@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { getAdminTables, getSalesOverview, getTopMeals, getTopWaiters } from '../../../components/api/api';
+import { getAdminTables, getSalesOverview, getTopMeals, getTopWaiters, getOrdersOverview } from '../../../components/api/api';
 
 export const setTablesAction = () => {
     return async (dispatch) => {
@@ -26,5 +26,12 @@ export const setTopWaitersAction = () => {
     return async (dispatch) => {
         const { data: waiters } = await axios.get(`${getTopWaiters}`);
         return dispatch({ type: "SET_TOP_WAITERS", waiters })
+    }
+}
+
+export const setOrdersAction = () => {
+    return async (dispatch) => {
+        const { data: orders } = await axios.get(`${getOrdersOverview}`);
+        return dispatch({ type: "SET_ORDERS_OVERVIEW", orders })
     }
 }
