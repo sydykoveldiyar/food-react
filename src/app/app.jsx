@@ -1,6 +1,7 @@
 import React from 'react';
 import './app.css';
 import './fonts.css';
+
 import { BrowserRouter, Route } from "react-router-dom";
 import Auth from "../components/auth/auth";
 import PrivateRoute from "./private-route";
@@ -10,6 +11,7 @@ import WaiterTables from '../components/waiter/waiter-tables/waiter-tables';
 import MenuCategories from "../components/waiter/menu-categories/menu-categories";
 import DishOrder from "../components/waiter/menu-meals/dish-order";
 import Basket from "../components/waiter/menu-meals/basket";
+import './media.css';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
