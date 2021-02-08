@@ -1,0 +1,29 @@
+
+.footer {
+    background-color: white;
+}
+
+.footer__container {
+    height: 70px;
+    margin: 0 70px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__menu a {
+    font-size: 18px;
+    color: #000000;
+    margin-right: 33px;
+    transition: .6s;
+}
+
+.footer__menu a:hover {
+    text-decoration-line: underline;
+    color: #B80505;
+}
+
+.footer__copyright {
+    font-size: 18px;
+    color: #000000;
+}

@@ -1,8 +1,7 @@
 .admin__top-menu {
     display: flex;
     justify-content: flex-end;
-    margin-top: 15px;
-    padding-right: 120px;
+    padding-top: 15px;
 }
 
 .admin__top-menu__btn {

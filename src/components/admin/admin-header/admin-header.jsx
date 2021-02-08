@@ -99,3 +99,4 @@ const AdminHeader = () => {
         </div>
     );
 }
+export default AdminHeader

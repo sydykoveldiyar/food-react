@@ -1,0 +1,39 @@
+.admin-sidebar {
+    width: 362px;
+    background-color: white;
+}
+
+.admin-sidebar__wrapper {
+    position: fixed;
+}
+
+.admin-sidebar__container {
+    padding: 10px 0 0 36px;
+}
+
+.admin-sidebar__logo {
+    font-family: "Oregano", sans-serif;
+    font-size: 48px;
+    color: #B80505;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+.admin-sidebar__links {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-sidebar__link {
+    font-size: 21px;
+    color: #000000;
+    transition: .6s;
+    display: inline-block;
+    margin-bottom: 25px;
+    max-width: 207px;
+}
+
+.admin-sidebar__link:hover {
+    text-decoration-line: underline;
+    color: #B80505;
+}
