@@ -1,6 +1,11 @@
-import './admin-header.css';
+import React, {useState, useRef} from 'react'
+import { useDetectOutsideClick } from "./useDetectOutsideClick";
+import './admin-header.css'
 
 const AdminHeader = () => {
+    const dropdownRef = useRef(null);
+    const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
+
     return (
         <div className="admin__top-menu">
             <button className="admin__top-menu__btn">
@@ -52,7 +57,11 @@ const AdminHeader = () => {
                     </g>
                 </svg>
             </button>
-            <button className="admin__top-menu__btn">
+
+            <button className="admin__top-menu__btn" onClick={() => {
+                setIsActive(!isActive)
+            }}
+            >
                 <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                     x="0px" y="0px" viewBox="0 0 512 512">
                     <g>
@@ -95,6 +104,9 @@ const AdminHeader = () => {
                     <g>
                     </g>
                 </svg>
+                <div ref={dropdownRef} className={`btn-dwn__dropdown ${isActive ? "active" : "inactive"}`}>
+                    <a href='/'>Выйти</a>
+                </div>
             </button>
         </div>
     );

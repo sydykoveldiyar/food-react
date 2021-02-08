@@ -10,10 +10,45 @@
     outline: none;
     cursor: pointer;
     margin: 0 15px;
+    position: relative;
 }
 
 .admin__top-menu__btn svg {
     width: 23px;
     height: 24px;
     fill: #766e6a;
+}
+
+.btn-dwn__dropdown {
+    background: #ffffff;
+    border-radius: 15px;
+    position: absolute;
+    top: 30px;
+    width: 100px;
+    height: 40px;
+    right: 0;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+.btn-dwn__dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-dwn__dropdown a {
+    transition: .4s;
+}
+
+.btn-dwn__dropdown a:hover {
+    color: red;
 }

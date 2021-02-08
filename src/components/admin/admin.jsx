@@ -1,8 +1,9 @@
 import './admin.css'
+import MealsPage from './meals-page/meals-page'
 
 const Admin = () =>{
     return (
-        <div className="title">Это страница админа</div>
+        <MealsPage/>
     );
 }
 
