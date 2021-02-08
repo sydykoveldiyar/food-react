@@ -7,3 +7,7 @@ export const getCategoryMeals = `${baseAPI}/Waiter/categoryMeals`;
 export const closeChequeAPI = `${baseAPI}/Waiter/closeCheque`;
 export const categoriesAPI = `${baseAPI}/categories`;
 export const createOrderAPI = `${baseAPI}/Waiter/createOrder`;
+
+export const getAdminTables = `${baseAPI}/Tables`;
+export const getSalesOverview = `${baseAPI}/Statistic/TotalSums`;
+export const getTopMeals = `${baseAPI}/Statistic/MealsIncome`;

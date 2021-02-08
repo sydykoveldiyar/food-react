@@ -1,9 +1,9 @@
 import './admin.css'
-import MealsPage from './meals-page/meals-page'
+import SalesOverview from "../admin/admin-statistic/sales-overview/sales-overview";
 
 const Admin = () =>{
     return (
-        <MealsPage/>
+        <SalesOverview />
     );
 }
 
