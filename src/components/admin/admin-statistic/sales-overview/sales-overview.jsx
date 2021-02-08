@@ -31,7 +31,7 @@ const SalesOverview = () => {
             <section className="sales">
                 <div className="sales-content">
                     <div className="admin__container container section__content">
-                        <AdminTitle />
+                        <AdminTitle title={'Обзор доходов'} isEntity={false} />
                         <div className="sales-overview">
                             <div className="sales-overview__item">
                                 <div className="sales-overview__item-title">Общий доход</div>

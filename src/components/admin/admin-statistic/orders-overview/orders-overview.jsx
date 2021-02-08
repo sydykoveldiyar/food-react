@@ -1,6 +1,6 @@
-import './orders.css'
+import './orders-overview.css'
 
-const Orders = () =>{
+const OrdersOverview = () =>{
     return (
         <section class="orders">
             <div class="orders-content">
@@ -33,4 +33,4 @@ const Orders = () =>{
     );
 }
 
-export default Orders;
+export default OrdersOverview;

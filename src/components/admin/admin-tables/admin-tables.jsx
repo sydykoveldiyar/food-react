@@ -22,7 +22,7 @@ const AdminTables = () => {
             <section className="admin-tables">
                 <div className="admin__container container">
                     <div className="section__content">
-                        <AdminTitle />
+                        <AdminTitle title={'Столы'} isEntity={true} />
                         <div className="admin-tables__grid grid__col-4">
                             { tables.map(item => (
                                 <div key={item.id} className="table-card">
