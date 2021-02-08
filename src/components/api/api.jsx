@@ -1,4 +1,4 @@
-const baseAPI = "http://172.21.127.49:45457/api";
+const baseAPI = "http://172.21.127.49:45456/api";
 
 export const getToken = `${baseAPI}/Account/Login`;
 export const getActiveOrders = `${baseAPI}/Waiter/activeOrders`;
@@ -7,3 +7,5 @@ export const getCategoryMeals = `${baseAPI}/Waiter/categoryMeals`;
 export const closeChequeAPI = `${baseAPI}/Waiter/closeCheque`;
 export const categoriesAPI = `${baseAPI}/categories`;
 export const createOrderAPI = `${baseAPI}/Waiter/createOrder`;
+
+export const getAdminTables = `${baseAPI}/Tables`;

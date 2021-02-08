@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import WaiterHeader from '../waiter-header/waiter-header'
 import './menu-categories.css'
 import { NavLink } from "react-router-dom";
-import { setCategories, setMeals } from "../../../redux/waiter/actions/waiter-actions";
+import { setCategoriesAction, setMealsAction } from "../../../redux/waiter/actions/waiter-actions";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 
@@ -11,12 +11,12 @@ const MenuCategories = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setCategories());
+        dispatch(setCategoriesAction());
     }, []);
 
     const categories = useSelector(s => s.waiter.categories);
     const setCategoryMeals = (id) => {
-        dispatch(setMeals(id));
+        dispatch(setMealsAction(id));
     };
     return (
         <div>

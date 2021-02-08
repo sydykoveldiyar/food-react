@@ -1,3 +1,8 @@
 .title{
     font-size: 50px;
 }
+
+.admin{
+    background: url('../../static/images/bg.png') no-repeat center/cover;
+    padding-bottom: 50px;
+}

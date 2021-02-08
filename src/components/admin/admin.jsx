@@ -1,8 +1,11 @@
+import AdminTables from './admin-tables/admin-tables';
 import './admin.css'
 
 const Admin = () =>{
     return (
-        <div className="title">Это страница админа</div>
+        <div className="admin">
+            <AdminTables />
+        </div>
     );
 }
 

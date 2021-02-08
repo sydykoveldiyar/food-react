@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './dish-list.css'
 import WaiterHeader from '../waiter-header/waiter-header'
 import { NavLink } from "react-router-dom";
-import { setBasket, createOrder } from "../../../redux/waiter/actions/waiter-actions";
+import { setBasketAction, createOrderAction } from "../../../redux/waiter/actions/waiter-actions";
 import { useDispatch, useSelector } from 'react-redux';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import { removeElement } from "../../../app/app";
 
 const Basket = () => {
 
     const dispatch = useDispatch();
     const [mealOrders, setMealOrders] = useState([]);
-    const basket = useSelector(s => s.waiter.basket);
     useEffect(async () => {
         const basket = await JSON.parse(localStorage.getItem('order'));
-        dispatch(setBasket(basket));
+        dispatch(setBasketAction(basket));
         setMealOrders(basket?.mealOrders);
     }, []);
 
@@ -30,7 +28,7 @@ const Basket = () => {
                 return;
             }
             if (window.confirm("Подтвердите заказ")) {
-                await dispatch(createOrder(order));
+                await dispatch(createOrderAction(order));
                 window.alert("Заказ был создан");
                 order.mealOrders = [];
                 localStorage.setItem('order', JSON.stringify(order));

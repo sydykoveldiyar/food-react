@@ -2,7 +2,7 @@ import './waiter-tables.css'
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { setTables, filterTables } from "../../../redux/waiter/actions/waiter-actions";
+import { setTablesAction, filterTablesAction } from "../../../redux/waiter/actions/waiter-actions";
 import WaiterHeader from "../waiter-header/waiter-header";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
@@ -11,7 +11,7 @@ const WaiterTables = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setTables());
+        dispatch(setTablesAction());
     });
     const tables = useSelector(s => s.waiter.tables);
     let filtered = useSelector(s => s.waiter.filteredTables);
@@ -38,7 +38,7 @@ const WaiterTables = () => {
         if (filtered.length === 0)
             filtered.length = 1;
         console.log(filtered);
-        dispatch(filterTables(filtered));
+        dispatch(filterTablesAction(filtered));
     }
 
     const allTables = () => {

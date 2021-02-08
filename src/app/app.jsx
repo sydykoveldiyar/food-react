@@ -15,7 +15,7 @@ import './media.css';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
-
+    const isAdmin = localStorage.getItem('role') === '1' ? true : false;
     return (
         <div>
             <BrowserRouter>
