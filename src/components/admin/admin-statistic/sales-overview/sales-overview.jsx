@@ -1,9 +1,10 @@
 import './sales-overview.css';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { setSalesAction } from "../../../../redux/admin/actions/admin-actions";
+import { setSalesAction, setTopMeals } from "../../../../redux/admin/actions/admin-actions";
 import AdminHeader from "../../admin-header/admin-header";
 import AdminTitle from "../../admin-title/admin-title";
+import Top from "../../admin-statistic/top/top";
 import chart1 from "../../../../static/images/chart1.png";
 import chart2 from "../../../../static/images/chart2.png";
 import chart3 from "../../../../static/images/chart3.png";
@@ -17,9 +18,11 @@ const SalesOverview = () => {
 
     useEffect(() => {
         dispatch(setSalesAction());
+        dispatch(setTopMeals());
     }, []);
 
     const sales = useSelector(s => s.admin.sales);
+    const topMeals = useSelector(s => s.admin.topMeals);
     return (
         <div>
             <AdminHeader />
@@ -56,6 +59,7 @@ const SalesOverview = () => {
                         </div>
                     </div>
                 </div>
+                <Top title={'Топ блюд'} list={topMeals} />
             </section>
         </div>
     );
