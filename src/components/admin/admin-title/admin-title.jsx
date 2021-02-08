@@ -2,9 +2,9 @@ import "./admin-title.css";
 
 const AdminTitle = () => {
     return (
-        <div class="admin-title">
-            <p class="admin-section__title">Столы</p>
-            <button class="admin-section__btn">Добавить</button>
+        <div className="admin-title">
+            <p className="admin-section__title">Столы</p>
+            <button className="admin-section__btn">Добавить</button>
         </div>
     );
 }

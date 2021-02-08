@@ -1,7 +1,7 @@
 import './admin-tables.css'
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { setTables } from "../../../redux/admin/actions/admin-actions";
+import { setTablesAction } from "../../../redux/admin/actions/admin-actions";
 import AdminHeader from "../admin-header/admin-header";
 import AdminTitle from "../admin-title/admin-title";
 import tableImg from '../../../static/images/table.png'
@@ -11,7 +11,7 @@ const AdminTables = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setTables());
+        dispatch(setTablesAction());
     }, []);
 
     const tables = useSelector(s => s.admin.tables);
@@ -25,7 +25,7 @@ const AdminTables = () => {
                         <AdminTitle />
                         <div className="admin-tables__grid grid__col-4">
                             { tables.map(item => (
-                                <div className="table-card">
+                                <div key={item.id} className="table-card">
                                 <div className="table-card__head">
                                     <img src={tableImg} alt=""/>
                                 </div>
