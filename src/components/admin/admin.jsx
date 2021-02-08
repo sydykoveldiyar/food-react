@@ -1,9 +1,10 @@
 import './admin.css'
-import MealsPage from './meals-page/meals-page'
+import AdminTables from './admin-tables/admin-tables'
+
 
 const Admin = () =>{
     return (
-        <MealsPage/>
+        <AdminTables/>
     );
 }
 
