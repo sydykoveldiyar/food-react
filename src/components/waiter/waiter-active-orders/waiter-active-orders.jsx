@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveOrders, closeChequeAction } from "../../../redux/waiter/actions/waiter-actions";
+import { setActiveOrdersAction, closeChequeAction } from "../../../redux/waiter/actions/waiter-actions";
 import './waiter-active-orders.css';
 import './waiter-order-modal.css';
 import Modal from "react-modal";
@@ -33,8 +33,8 @@ const WaiterActiveOrders = () => {
     const closeModal = () => setModalIsOpen(false);
 
     useEffect(() => {
-        dispatch(setActiveOrders());
-    });
+        dispatch(setActiveOrdersAction());
+    }, []);
 
     const createOrder = () => {
         const order = {

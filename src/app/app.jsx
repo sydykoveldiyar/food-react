@@ -15,7 +15,7 @@ import './media.css';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
-
+    const isAdmin = localStorage.getItem('role') === '1' ? true : false;
     return (
         <div>
             <BrowserRouter>
@@ -47,6 +47,12 @@ export const getErrorMessage = (e) => {
     return data && data.message
         ? data.message
         : data;
+}
+
+export const removeElement = (array, elem) => {
+    var index = array.indexOf(elem);
+    if (index > -1)
+        array.splice(index, 1);
 }
 
 export default App;

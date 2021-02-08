@@ -18,7 +18,18 @@ a{
 }
 
 .container {
-    padding: 0 54px 0 62px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.admin__container{
+    max-width: 1440px;
+}
+
+.section__content{
+    padding-top: 50px;
 }
 
 .grid__col-6{
@@ -40,10 +51,25 @@ a{
     display: flex;
 }
 
-.section__title {
+.admin-section__title {
     font-weight: 500;
     font-size: 30px;
     color: #000000;
+}
+
+.admin-section__btn{
+    font-size: 16px;
+    line-height: 29px;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    background-color: #04932C;
+    border: none;
+    border-radius: 5px;
+    margin-left: 112px;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
 }
 
 .full-report-btn{

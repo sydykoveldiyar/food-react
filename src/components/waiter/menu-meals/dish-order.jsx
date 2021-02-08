@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { removeElement } from "../../../app/app";
 import './dish-list.css';
 import WaiterHeader from '../waiter-header/waiter-header'
 import { useDispatch, useSelector } from "react-redux";
@@ -14,11 +15,23 @@ const DishOrder = () => {
             return;
         }
         let order = JSON.parse(localStorage.getItem('order'));
-        order.mealOrders.push({
-            mealId: meal.id,
-            orderedQuantity: meal.orderedQuantity,
-            price: meal.price
-        });
+        const foundMeal = order.mealOrders.find(e => e.mealId == meal.id);
+        if (foundMeal){
+            removeElement(order.mealOrders, foundMeal);
+            foundMeal.orderedQuantity += meal.orderedQuantity;
+            order.mealOrders.push({
+                mealId: foundMeal.id,
+                orderedQuantity: foundMeal.orderedQuantity,
+                price: foundMeal.price
+            });
+        }
+        else{
+            order.mealOrders.push({
+                mealId: meal.id,
+                orderedQuantity: meal.orderedQuantity,
+                price: meal.price
+            });
+        }
         localStorage.setItem('order', JSON.stringify(order));
     }
 
@@ -42,7 +55,7 @@ const DishOrder = () => {
                             <h3 className="dish-list-item__title">{item.name}</h3>
                             <div className="dish-list-item__bottom-side">
                                 <div className="dish-list-item__left-side">
-                                    <div className="dish-list-item__price justify-align"><p>{item.price * item.orderedQuantity}</p></div>
+                                    <div className="dish-list-item__price justify-align"><p>{item.orderedQuantity > 0 ? item.price * item.orderedQuantity : item.price}</p></div>
                                     <button className="dish-list-item__plus-minus justify-align"><span>-</span></button>
                                     <div className="dish-list-item__count justify-align"><p>{item.orderedQuantity}</p></div>
                                     <button className="dish-list-item__plus-minus justify-align" onClick={() => upItemCount(item)}>+</button>

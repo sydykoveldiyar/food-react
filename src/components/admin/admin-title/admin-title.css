@@ -1,0 +1,10 @@
+
+.admin-title{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.admin-section__btn:hover{
+    background-color: #13b641;
+}
