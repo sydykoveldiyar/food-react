@@ -60,7 +60,7 @@ const SalesOverview = () => {
                             </div>
                         </div>
                         <div className="top-charts">
-                            <Top title={'Топ блюд'} list={topMeals} />
+                            <Top className="top-meals" title={'Топ блюд'} list={topMeals} />
                             <div className="chart">
 
                             </div>

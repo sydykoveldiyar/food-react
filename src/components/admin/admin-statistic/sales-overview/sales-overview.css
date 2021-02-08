@@ -1,5 +1,6 @@
 .sales{
     display: flex;
+    background-image: url('../../../../static/images/bg.png');
 }
 
 .sales-content {
@@ -52,9 +53,15 @@ body {
     grid-column-gap: 50px;
 }
 
+.top{
+    margin: auto 0;
+    height: 450px;
+}
+
+
 .chart{
     width: 300px;
-    height: 400px;
+    height: 600px;
 }
 
 .top-list__item{
