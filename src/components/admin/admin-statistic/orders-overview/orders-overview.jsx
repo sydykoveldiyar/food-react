@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setOrdersAction } from "../../../../redux/admin/actions/admin-actions";
+import AdminTitle from "../../admin-title/admin-title";
 import './orders-overview.css'
 import { useEffect } from 'react';
 
@@ -15,8 +16,10 @@ const OrdersOverview = () =>{
     return (
         <section class="orders">
             <div class="orders-content">
-                <div class="orders-content__container">
-                    <p class="orders__title section__title">Orders Overview</p>
+                <div class="admin__container container section__content">
+                    <p class="orders__title section__title">
+                        <AdminTitle title={'Обзор заказов'} isEntity={false}/>
+                    </p>
                     <div class="grid__col-3 orders-overview">
                         <div class="orders-overview__item">
                             <p class="orders-overview__title">TOTAL ORDERS</p>

@@ -1,11 +1,11 @@
 import './admin.css'
-import MealsPage from "./meals-page/meals-page";
+import OrdersOverview from '../admin/admin-statistic/orders-overview/orders-overview';
 
-
-
-const Admin = () =>{
+const Admin = () => {
     return (
-        <MealsPage/>
+        <div>
+            <OrdersOverview />
+        </div>
     );
 }
 

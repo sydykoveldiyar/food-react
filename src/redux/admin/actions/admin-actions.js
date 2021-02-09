@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { getAdminTables, getSalesOverview, getTopMeals, getTopWaiters, getOrdersOverview, getAllMeals, changeAllMeals } from '../../../components/api/api';
+import { getAdminTables, getSalesOverview, getTopWaiters, getOrdersOverview, getAllMeals, changeAllMeals } from '../../../components/api/api';
 
 export const setTablesAction = () => {
     return async (dispatch) => {
@@ -15,26 +15,19 @@ export const setSalesAction = () => {
     }
 }
 
-export const setTopMealsAction = () => {
+export const setTopWaitersAction = () => {
     return async (dispatch) => {
-        const { data: meals } = await axios.get(`${getTopMeals}`);
-        return dispatch({ type: "SET_TOP_MEALS", meals })
+        const { data: waiters } = await axios.get(`${getTopWaiters}`);
+        return dispatch({ type: "SET_TOP_WAITERS", waiters })
     }
 }
 
-// export const setTopWaitersAction = () => {
-//     return async (dispatch) => {
-//         const { data: waiters } = await axios.get(`${getTopWaiters}`);
-//         return dispatch({ type: "SET_TOP_WAITERS", waiters })
-//     }
-// }
-//
-// export const setOrdersAction = () => {
-//     return async (dispatch) => {
-//         const { data: orders } = await axios.get(`${getOrdersOverview}`);
-//         return dispatch({ type: "SET_ORDERS_OVERVIEW", orders })
-//     }
-// }
+export const setOrdersAction = () => {
+    return async (dispatch) => {
+        const { data: orders } = await axios.get(`${getOrdersOverview}`);
+        return dispatch({ type: "SET_ORDERS_OVERVIEW", orders })
+    }
+}
 
 export const setAllMealsAction = () => {
     return async (dispatch) => {
