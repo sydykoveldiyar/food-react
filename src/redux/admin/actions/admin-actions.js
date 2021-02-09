@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { tablesAPI, getSalesOverview, getTopWaiters, getOrdersOverview, getMeals, mealsAPI, getCategoryOptions, usersAPI, dictionariesAPI} from '../../../components/api/api';
+import { tablesAPI, getSalesOverview, getTopWaiters, getOrdersOverview, getMeals, mealsAPI, getCategoryOptions, usersAPI, dictionariesAPI, categoriesAPI, departmentsAPI} from '../../../components/api/api';
 
 export const setTablesAction = () => {
     return async (dispatch) => {
@@ -105,3 +105,33 @@ export const removeTableAction = (id) => {
         return dispatch({ type: "REMOVE_TABLE", table })
     }
 }
+
+export const setCategoriesAction = () => {
+    return async (dispatch) => {
+        const { data: categories } = await axios.get(`${categoriesAPI}`);
+        return dispatch({ type: "SET_CATEGORIES", categories })
+    }
+}
+
+export const saveCategoryAction = (entity) => {
+    return async (dispatch) => {
+        const { data: category } = await axios.post(`${categoriesAPI}`, entity);
+        return dispatch({ type: "ADD_CATEGORY", category })
+    }
+}
+
+export const removeCategoryAction = (id) => {
+    return async (dispatch) => {
+        const { data: category } = await axios.delete(`${categoriesAPI}/${id}`);
+        return dispatch({ type: "REMOVE_CATEGORY", category })
+    }
+}
+
+export const setDepartmentsAction = () => {
+    return async (dispatch) => {
+        const { data: departments } = await axios.get(`${departmentsAPI}`);
+        return dispatch({ type: "SET_DEPARTMENTS", departments })
+    }
+}
+
+

@@ -25,3 +25,5 @@ export const getCategoryOptions = `${baseAPI}/Categories`;
 export const usersAPI = `${baseAPI}/Users`;
 
 export const dictionariesAPI = `${baseAPI}/Dictionaries`;
+
+export const departmentsAPI = `${baseAPI}/Dictionaries/Departments`;

@@ -20,6 +20,7 @@ import AdminTables from '../components/admin/admin-tables/admin-tables';
 import AdminBooking from "../components/admin/admin-booking/admin-booking";
 import AdminBookingList from "../components/admin/admin-booking/admin-booking-list";
 import Users from '../components/admin/users/users';
+import AdminCategories from "../components/admin/admin-categories/admin-categories";
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
@@ -38,6 +39,7 @@ const App = () => {
                     <PrivateRoute path='/admin/users' auth={isLogged} component={() => <Users />}/>
 					<PrivateRoute path='/admin/booking' auth={isLogged} component={() => <AdminBooking />}/>
                     <PrivateRoute path='/admin/booking-list' auth={isLogged} component={() => <AdminBookingList />}/>
+                    <PrivateRoute path='/admin/categories' auth={isLogged} component={() => <AdminCategories/>}/>
                 </div>
                 <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact/>
                 <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} exact/>

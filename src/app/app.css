@@ -96,6 +96,7 @@ a{
 .admin-content{
     width: 80%;
     margin-left: 304px;
+    min-height: 100vh;
 }
 
 .footer {

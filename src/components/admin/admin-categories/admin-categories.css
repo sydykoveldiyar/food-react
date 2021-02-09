@@ -1,0 +1,72 @@
+.admin-categories__grid{
+    grid-column-gap: 40px;
+    grid-row-gap: 10px;
+}
+
+.category-card{
+    padding-top: 50px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.category-card__head{
+    width: 100%;
+    height: 254px;
+}
+
+.category-card__head img{
+    width: 100%;
+    height: 100%;
+}
+
+.category-card__name{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.category-card__status{
+    width: 30%;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+}
+.category-card__btns{
+    width: 100%;
+}
+
+.category-card__btn{
+    width: 50%;
+    height: 49px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 25px;
+    transition: .3s;
+}
+
+.change-btn{
+    background-color: #04932C;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.change-btn:hover{
+    background-color: #13b641;
+}
+
+.delete-btn{
+    background-color: #B80505;
+    border-radius: 0px 0px 10px 0px;
+}
+.delete-btn:hover{
+    background-color: #db1e1e;
+}
