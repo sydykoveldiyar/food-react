@@ -21,9 +21,9 @@ const customStyles = {
 };
 
 const AdminTables = () => {
+    const dispatch = useDispatch()
     const [isEditing, setIsEditing] = useState(false);
     const tables = useSelector(s => s.admin.tables);
-    const dispatch = useDispatch()
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = () => setModalIsOpen(true);
     const closeModal = () => {
