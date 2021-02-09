@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Waiter = () => {
     return (
-        <div>
+        <div className="waiter-content">
             <ReactCSSTransitionGroup
                 transitionName="slide"
                 transitionAppear={true}

@@ -59,7 +59,7 @@ const Basket = () => {
     }
 
     return (
-        <div>
+        <div className="waiter-content">
             <WaiterHeader href={'menu-categories'} title={'Корзина'} hasCart={false}/>
             <ReactCSSTransitionGroup
                 transitionName="slide"

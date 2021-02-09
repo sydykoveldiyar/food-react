@@ -40,7 +40,7 @@ const DishOrder = () => {
     };
 
     return (
-        <div>
+        <div className="waiter-content">
             <WaiterHeader href={'menu-categories'} title={'Список блюд'} hasCart={true}/>
             <ReactCSSTransitionGroup
                 transitionName="slide"
