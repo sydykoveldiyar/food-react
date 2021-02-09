@@ -7,6 +7,8 @@ const initialState = {
     cookedMeals: [],
     allMeals: [],
     allChangeMeals: [],
+    categoriesOptions: [],
+    addedMeals: [],
 }
 
 export const adminReducer = (state = initialState, action) => {
@@ -22,9 +24,13 @@ export const adminReducer = (state = initialState, action) => {
         case ("SET_TOP_WAITERS"):
             return {...state, topWaiters: action.waiters}
         case ("SET_ALL_MEALS"):
-            return {...state, allMeals: action.allMeals};
+            return {...state, allMeals: action.allMeals}
         case ("SET_CHANGE_ALL_MEALS"):
-            return {...state, allChangeMeals: action.allChangeMeals};
+            return {...state, allChangeMeals: action.allChangeMeals}
+        case ("SET_CATEGORIES_OPTIONS"):
+            return {...state, categoriesOptions: action.categoriesOptions}
+        case ("SET_ADD_MEAL"):
+            return {...state, addedMeals: action.addedMeals}
         default:
             return state
     }

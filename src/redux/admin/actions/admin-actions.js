@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { getAdminTables, getSalesOverview, getTopWaiters, getOrdersOverview, getAllMeals, changeAllMeals } from '../../../components/api/api';
+import { getAdminTables, getSalesOverview, getTopWaiters, getOrdersOverview, getAllMeals, mealsAPI, getCategoriesOptions} from '../../../components/api/api';
 
 export const setTablesAction = () => {
     return async (dispatch) => {
@@ -38,8 +38,20 @@ export const setAllMealsAction = () => {
 
 export const changeAllMealsAction = (id, changedMeal) => {
     return async (dispatch) => {
-        const { data: changedAllMeals } = await axios.put(`${changeAllMeals}/${id}`, changedMeal);
+        const { data: changedAllMeals } = await axios.put(`${mealsAPI}/${id}`, changedMeal);
         return dispatch({ type: "SET_CHANGE_ALL_MEALS", changedAllMeals })
+    }
+}
+export const setCategoriesOptionsAction = () => {
+    return async (dispatch) => {
+        const { data: categoriesOptions } = await axios.get(`${getCategoriesOptions}`);
+        return dispatch({ type: "SET_CATEGORIES_OPTIONS", categoriesOptions })
+    }
+}
+export const addNewMealAction = (newMeal) => {
+    return async (dispatch) => {
+        const { data: addedMeals } = await axios.post(`${mealsAPI}`, newMeal);
+        return dispatch({ type: "SET_ADD_MEAL", addedMeals })
     }
 }
 

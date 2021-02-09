@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from "react-redux";
 import Modal from "react-modal";
-import {changeAllMealsAction, setAllMealsAction} from "../../../redux/admin/actions/admin-actions";
+import {changeAllMealsAction, setAllMealsAction, setCategoriesOptionsAction, addNewMealAction} from "../../../redux/admin/actions/admin-actions";
 import './meals-page.css'
-
 
 const MealsPage = () => {
     const allMeals = useSelector(s => s.admin.allMeals)
+    const categoriesOptions = useSelector(s => s.admin.categoriesOptions)
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(setAllMealsAction())
+        dispatch(setCategoriesOptionsAction())
     }, [])
 
     const setMealIsActive = (status) => {
@@ -46,13 +48,23 @@ const MealsPage = () => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const openModal = () => setModalIsOpen(true);
+    const openModal = () => {
+        setModalIsOpen(true);
+    }
 
     const closeModal = () => setModalIsOpen(false);
 
+    const handleMeal = (e) => setNewMeal({ ...newMeal, [e.target.name]: e.target.value });
+
     function submitHandler(e) {
         e.preventDefault()
+        console.log(newMeal)
+        dispatch(addNewMealAction(newMeal))
     }
+
+    let [newMeal, setNewMeal] = useState({
+        imageURL: "a",
+    })
 
     return (
         <div className="meals-page">
@@ -142,7 +154,38 @@ const MealsPage = () => {
                     }
                     <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}
                            closeTimeoutMS={300}>
-                        <form onSubmit={submitHandler}></form>
+                        <form onSubmit={submitHandler} className="meal-add-modal">
+                            <div className="meal-add-modal__input-wrapper">
+                                <label htmlFor="meal-add-modal__name" className="meal-add-modal__text">Название:</label>
+                                <input name="name" type="text" id="meal-add-modal__name" required onChange={handleMeal}/>
+                            </div>
+                            <div className="meal-add-modal__input-wrapper">
+                                <label htmlFor="meal-add-modal__categories" className="meal-add-modal__text">Категория:</label>
+                                <select name="categoryId" id="modal__categories" onChange={handleMeal}>
+                                    <option value="" disabled selected>Select options</option>
+                                    {
+                                        categoriesOptions.map(category => (
+                                            <option key={category.id} value={category.id}> {category.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                            <div className="meal-add-modal__input-wrapper">
+                                <label htmlFor="meal-add-modal__price" className="meal-add-modal__text">Цена:</label>
+                                <input name="price" type="number" id="meal-add-modal__price" required onChange={handleMeal}/>
+                            </div>
+                            <div className="meal-add-modal__input-wrapper">
+                                <label htmlFor="meal-add-modal__weight" className="meal-add-modal__text">Вес:</label>
+                                <input name="weight" type="number" id="meal-add-modal__weight" required onChange={handleMeal}/>
+                            </div>
+                            <div className="meal-add-modal__input-wrapper">
+                                <label htmlFor="meal-add-modal__desc" className="meal-add-modal__text">Описание:</label>
+                                <textarea name="description" id="meal-add-modal__desc" onChange={handleMeal}></textarea>
+                            </div>
+                            <div className="meal-add-modal__input-wrapper">
+                                <input type="submit"/>
+                            </div>
+                        </form>
                     </Modal>
                     </tbody>
                 </table>
