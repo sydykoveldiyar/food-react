@@ -1,45 +1,72 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setOrdersAction } from "../../../../redux/admin/actions/admin-actions";
+import * as axios from 'axios';
+import { getKitchenTop, getBarTop } from "../../../api/api";
 import AdminTitle from "../../admin-title/admin-title";
 import './orders-overview.css'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Top from "../top/top";
 
-const OrdersOverview = () =>{
+const OrdersOverview = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(setOrdersAction());
+        getKitchenSums();
+        getBarSums();
     }, []);
 
     const orders = useSelector(s => s.admin.orders);
+    const [kitchenSums, setKitchenSums] = useState([]);
+    const getKitchenSums = async () => {
+        const { data: top } = await axios.get(`${getKitchenTop}`);
+        setKitchenSums(top);
+    }
+
+    const [barSums, setBarSums] = useState([]);
+    const getBarSums = async () => {
+        const { data: top } = await axios.get(`${getBarTop}`);
+        setBarSums(top);
+    }
 
     return (
         <section class="orders">
             <div class="orders-content">
                 <div class="admin__container container section__content">
                     <p class="orders__title section__title">
-                        <AdminTitle title={'Обзор заказов'} isEntity={false}/>
+                        <AdminTitle title={'Обзор заказов'} isEntity={false} />
                     </p>
                     <div class="grid__col-3 orders-overview">
                         <div class="orders-overview__item">
-                            <p class="orders-overview__title">TOTAL ORDERS</p>
+                            <p class="orders-overview__title">заказы</p>
                             <p class="orders-overview__number">{orders.totalOrders}</p>
                         </div>
                         <div class="orders-overview__item">
-                            <p class="orders-overview__title">ORDERS MONTH</p>
+                            <p class="orders-overview__title">заказы за месяц</p>
                             <p class="orders-overview__number">{orders.totalOrdersMonth}</p>
                         </div>
                         <div class="orders-overview__item">
-                            <p class="orders-overview__title">ORDERS WEEK</p>
+                            <p class="orders-overview__title">заказы за неделю</p>
                             <p class="orders-overview__number">{orders.totalOrdersWeek}</p>
                         </div>
                         <div class="orders-overview__item">
-                            <p class="orders-overview__title">ORDERS TODAY</p>
+                            <p class="orders-overview__title">заказы за сегодня</p>
                             <p class="orders-overview__number">{orders.totalOrdersToday}</p>
                         </div>
                     </div>
-                    <div class="orders-rating">
-                        
+                    <div class="orders__top-charts">
+                        <div className>
+                            <Top className="top-meals" title={'Топ кухни'} list={kitchenSums} />
+                            <div className="chart">
+
+                            </div>
+                        </div>
+                        <div className>
+                            <Top className="top-meals" title={'Топ бара'} list={barSums} />
+                            <div className="chart">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

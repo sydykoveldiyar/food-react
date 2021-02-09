@@ -14,7 +14,9 @@ export const getTopMeals = `${baseAPI}/Statistic/MealsTop`;
 export const getTopWaiters = `${baseAPI}/Statistic/WaiterOrders`;
 export const getOrdersOverview = `${baseAPI}/Statistic/totalOrders`;
 
+export const getKitchenTop = `${baseAPI}/Statistic/kitchenSums`
+export const getBarTop = `${baseAPI}/Statistic/barSums`
+
 export const getAllMeals = `${baseAPI}/Admin/getMeals`;
 export const changeAllMeals = `${baseAPI}/Meals`;
-
 export const Meals = `${baseAPI}/Meals`;
