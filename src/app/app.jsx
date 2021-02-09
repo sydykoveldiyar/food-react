@@ -7,7 +7,6 @@ import Auth from "../components/auth/auth";
 import PrivateRoute from "./private-route";
 import Waiter from "../components/waiter/waiter";
 import Admin from "../components/admin/admin";
-import AdminTitle from "../components/admin/admin-title/admin-title";
 import WaiterTables from '../components/waiter/waiter-tables/waiter-tables';
 import MenuCategories from "../components/waiter/menu-categories/menu-categories";
 import DishOrder from "../components/waiter/menu-meals/dish-order";
@@ -16,10 +15,11 @@ import './media.css';
 import Sidebar from '../components/admin/sidebar/sidebar';
 import SalesOverview from '../components/admin/admin-statistic/sales-overview/sales-overview';
 import AdminHeader from '../components/admin/admin-header/admin-header';
-import MealsPage from '../components/admin/meals-page/meals-page';
+import AdminMeals from '../components/admin/admin-meals/admin-meals';
 import AdminTables from '../components/admin/admin-tables/admin-tables';
 import AdminBooking from "../components/admin/admin-booking/admin-booking";
 import AdminBookingList from "../components/admin/admin-booking/admin-booking-list";
+import Users from '../components/admin/users/users';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
@@ -33,9 +33,10 @@ const App = () => {
                     <PrivateRoute path='/admin' auth={isLogged} component={() => <AdminHeader />} />
                     <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} exact/>
                     <PrivateRoute path='/admin/sales' auth={isLogged} component={() => <SalesOverview />} exact/>
-                    <PrivateRoute path='/admin/meals-page' auth={isLogged} component={() => <MealsPage />}/>
+                    <PrivateRoute path='/admin/meals' auth={isLogged} component={() => <AdminMeals />}/>
                     <PrivateRoute path='/admin/tables' auth={isLogged} component={() => <AdminTables />}/>
-                    <PrivateRoute path='/admin/booking' auth={isLogged} component={() => <AdminBooking />}/>
+                    <PrivateRoute path='/admin/users' auth={isLogged} component={() => <Users />}/>
+					<PrivateRoute path='/admin/booking' auth={isLogged} component={() => <AdminBooking />}/>
                     <PrivateRoute path='/admin/booking-list' auth={isLogged} component={() => <AdminBookingList />}/>
                 </div>
                 <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact/>

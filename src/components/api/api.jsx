@@ -8,15 +8,20 @@ export const closeChequeAPI = `${baseAPI}/Waiter/closeCheque`;
 export const categoriesAPI = `${baseAPI}/categories`;
 export const createOrderAPI = `${baseAPI}/Waiter/createOrder`;
 
-export const getAdminTables = `${baseAPI}/Tables`;
+export const tablesAPI = `${baseAPI}/Tables`;
+
 export const getSalesOverview = `${baseAPI}/Statistic/TotalSums`;
+export const getOrdersOverview = `${baseAPI}/Statistic/totalOrders`;
 export const getTopMeals = `${baseAPI}/Statistic/MealsIncome`;
 export const getTopWaiters = `${baseAPI}/Statistic/WaiterOrders`;
-export const getOrdersOverview = `${baseAPI}/Statistic/totalOrders`;
 
 export const getKitchenTop = `${baseAPI}/Statistic/kitchenSums`
 export const getBarTop = `${baseAPI}/Statistic/barSums`
 
-export const getAllMeals = `${baseAPI}/Admin/getMeals`;
 export const mealsAPI = `${baseAPI}/Meals`;
-export const getCategoriesOptions = `${baseAPI}/Categories`;
+export const getMeals = `${baseAPI}/Admin/getMeals`;
+export const getCategoryOptions = `${baseAPI}/Categories`;
+
+export const usersAPI = `${baseAPI}/Users`;
+
+export const dictionariesAPI = `${baseAPI}/Dictionaries`;

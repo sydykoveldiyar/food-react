@@ -1,0 +1,232 @@
+.users-page__top-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.users-page__controls {
+    display: flex;
+    align-items: center;
+}
+
+.users-page__title {
+    font-weight: 500;
+    font-size: 30px;
+    color: #fff;
+    background-color: #00000070;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.users-page__add-btn {
+    width: 250px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 21px;
+    color: #FFFFFF;
+    background: #04932C;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-right: 158px;
+    transition: all .4s;
+}
+
+.users-page__add-btn:hover {
+    opacity: 0.9;
+}
+
+.users-page__select-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.users-page__select-label {
+    font-weight: 500;
+    font-size: 21px;
+    color: #000000;
+    margin-right: 15px;
+}
+
+.users-page__select {
+    background: #04932C;
+    border-radius: 15px;
+    height: 50px;
+    padding-left: 22px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+    font-size: 21px;
+    color: #FFFFFF;
+    border: none;
+    appearance: none;
+    position: relative;
+}
+
+.select {
+    position: relative;
+    line-height: 3;
+    transition: all 0.4s;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select:hover {
+    opacity: 0.9;
+}
+
+.select:hover::after {
+    color: #fff;
+}
+
+.users-page__select-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.users-page__table {
+    margin: 35px 0 150px;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+.users-page__table th {
+    font-weight: 600;
+    font-size: 21px;
+    color: #000000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 60px;
+}
+
+.users-page__table th:not(:last-of-type) {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.users-page__table td{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 250px;
+    height: 70px;
+    font-weight: 500;
+    font-size: 21px;
+    color: #000000;
+    text-align: center;
+}
+
+.users-page__table tr:last-of-type td {
+    border: none;
+}
+
+.users-page__table tr td:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.users-page__checkbox-toggle {
+    visibility: hidden;
+    position: absolute;
+}
+
+.users-page__checkbox-label {
+    background-color: #B80505;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    width: 73px;
+    height: 31px;
+    position: relative;
+    margin-top: 8px;
+}
+
+.users-page__checkbox-toggle:checked + .users-page__checkbox-label {
+    background-color: #04932C;
+}
+
+.users-page__checkbox-ball {
+    background: #fff;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    animation: slideOff 0.3s linear forwards;
+}
+
+.users-page__checkbox-toggle:checked + .users-page__checkbox-label .users-page__checkbox-ball {
+    animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(41px) scale(1);
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+    100% {
+        transform: translateX(-2px) scale(1);
+    }
+}
+
+.users-page__table-btn-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+.users-page__table-btn {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+.users-page__table-btn:first-of-type {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.users-page__table-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: #808080;
+}
+
+.user-add-modal {
+    width: 350px;
+    border: 2px solid black;
+}
+
+.user-add-modal__input-wrapper {
+    padding: 5px;
+}
