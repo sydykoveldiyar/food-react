@@ -5,7 +5,8 @@ const initialState = {
     topWaiters: [],
     orders: [],
     cookedMeals: [],
-    cookedMeals: []
+    allMeals: [],
+    allChangeMeals: [],
 }
 
 export const adminReducer = (state = initialState, action) => {
@@ -22,6 +23,8 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, topWaiters: action.waiters}
         case ("SET_ALL_MEALS"):
             return {...state, allMeals: action.allMeals};
+        case ("SET_CHANGE_ALL_MEALS"):
+            return {...state, allChangeMeals: action.allChangeMeals};
         default:
             return state
     }

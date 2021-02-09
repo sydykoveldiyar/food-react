@@ -12,5 +12,6 @@ export const getAdminTables = `${baseAPI}/Tables`;
 export const getSalesOverview = `${baseAPI}/Statistic/TotalSums`;
 export const getTopMeals = `${baseAPI}/Statistic/MealsIncome`;
 export const getAllMeals = `${baseAPI}/Admin/getMeals`;
+export const changeAllMeals = `${baseAPI}/Meals`;
 
 export const Meals = `${baseAPI}/Meals`;

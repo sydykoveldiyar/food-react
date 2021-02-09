@@ -4,6 +4,7 @@
     <list default="true" id="95a57772-0206-4781-ae58-f011b9b45763" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page-item.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/api/api.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/api/api.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" afterDir="false" />
@@ -59,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612811461215</updated>
       <workItem from="1612811465120" duration="8671000" />
+      <workItem from="1612851998435" duration="6992000" />
     </task>
     <servers />
   </component>
@@ -66,6 +68,15 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
