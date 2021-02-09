@@ -40,12 +40,15 @@
 .users-page__select-wrapper {
     display: flex;
     align-items: center;
+    background-color: #00000070;
+    border-radius: 15px;
+    padding-left: 10px;
 }
 
 .users-page__select-label {
     font-weight: 500;
     font-size: 21px;
-    color: #000000;
+    color: #fff;
     margin-right: 15px;
 }
 

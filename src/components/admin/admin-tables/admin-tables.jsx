@@ -59,7 +59,7 @@ const AdminTables = () => {
                                     </div>
                                     <div className="table-card__btns">
                                         <button className="table-card__btn change-btn">Изменить</button>
-                                        <button onClick={removeTable} className="table-card__btn delete-btn">Удалить</button>
+                                        <button onClick={() => removeTable(item.id)} className="table-card__btn delete-btn">Удалить</button>
                                     </div>
                                 </div>
                             ))}

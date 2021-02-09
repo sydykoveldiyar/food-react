@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getUsersAction, getUserRolesAction, removeUserAction, saveUserAction } from "../../../redux/admin/actions/admin-actions";
 import Modal from "react-modal";
 import './users.css'
+import AdminTitle from '../admin-title/admin-title';
 
 const customStyles = {
     content: {
@@ -52,12 +53,11 @@ const Users = () => {
             <section className="users-page">
                 <div className="admin__container container section__content">
                     <div className="users-page__top-box">
-                        <p className="users-page__title">Meals page</p>
+                        <AdminTitle title={'Пользователи'} isEntity={true} openModal={openModal}/>
                         <div className="users-page__controls">
-                            <button className="users-page__add-btn" onClick={openModal}>Добавить</button>
                             <div className="users-page__select-wrapper">
                                 <label className="users-page__select-label" htmlFor="users-page__select">По
-                                категориям:</label>
+                                ролям:</label>
                                 <div className="select">
                                     <select id="users-page__select" className="users-page__select">
                                         <option value="default">Все</option>
