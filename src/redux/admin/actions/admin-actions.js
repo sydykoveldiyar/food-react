@@ -141,6 +141,13 @@ export const setDepartmentsAction = () => {
     }
 }
 
+export const editCategoryAction = (entity) => {
+    return async (dispatch) => {
+        const { data: category } = await axios.put(`${categoriesAPI}/${entity.id}`, entity);
+        return dispatch({ type: "EDIT_CATEGORY", category })
+    }
+}
+
 export const setFreeTablesAction = () => {
     return async (dispatch) => {
         const { data: tables } = await axios.get(`${tablesAPI}/freeTables`);

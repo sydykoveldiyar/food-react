@@ -6,7 +6,8 @@ import {
     setCategoriesAction,
     saveCategoryAction,
     removeCategoryAction,
-    setDepartmentsAction
+    setDepartmentsAction,
+    editCategoryAction
 } from "../../../redux/admin/actions/admin-actions";
 import AdminHeader from "../admin-header/admin-header";
 import AdminTitle from "../admin-title/admin-title";
@@ -25,9 +26,14 @@ const customStyles = {
 
 const AdminCategories = () => {
     const dispatch = useDispatch()
+    const [isEditing, setIsEditing] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = () => setModalIsOpen(true);
-    const closeModal = () => setModalIsOpen(false);
+    const closeModal = () => {
+        setModalIsOpen(false);
+        setIsEditing(false);
+        setCategory({});
+    }
 
     const categories = useSelector(s => s.admin.categories);
     const departments = useSelector(s => s.admin.departments);
@@ -36,11 +42,11 @@ const AdminCategories = () => {
     useEffect(() => {
         dispatch(setCategoriesAction());
         dispatch(setDepartmentsAction())
-    }, []);
+    }, [categories]);
 
     useEffect(() => {
-        if (categories.length) setCategory({ ...category, categoryId: categories[0].id })
-    }, [categories])
+        if (departments.length) setCategory({ ...category, department: departments[0].value })
+    }, [departments])
 
 
     const handleCategory = (e) => setCategory({ ...category, [e.target.name]: e.target.value });
@@ -49,12 +55,19 @@ const AdminCategories = () => {
         setCategory({ ...category, department: departmentId })
     }
     const saveCategory = () => {
-        dispatch(saveCategoryAction(category));
+        console.log(category)
+        isEditing ? dispatch(editCategoryAction(category)) :  dispatch(saveCategoryAction(category));
         closeModal();
     }
     const removeCategory = (id) => {
         if (window.confirm("Хотите удалить категорию?"))
             dispatch(removeCategoryAction(id));
+    }
+    const setEditEntity = (entity) => {
+        console.log(entity)
+        setIsEditing(true);
+        setCategory({id: entity.id, name: entity.name, department: entity.department,  imageURL: entity.image});
+        openModal();
     }
 
     return (
@@ -74,7 +87,7 @@ const AdminCategories = () => {
                                         <div className="category-card__name">{item.name}</div>
                                     </div>
                                     <div className="category-card__btns">
-                                        <button className="category-card__btn change-btn">Изменить</button>
+                                        <button className="category-card__btn change-btn" onClick={() => setEditEntity(item)}>Изменить</button>
                                         <button onClick={() => removeCategory(item.id)} className="category-card__btn delete-btn">Удалить</button>
                                     </div>
                                 </div>
@@ -89,21 +102,21 @@ const AdminCategories = () => {
                     <div className="user-add-modal__input-wrapper">
                         <div>
                             <label htmlFor="user-add-modal__name" className="user-add-modal__text">Имя:</label>
-                            <input name="name" type="text" id="user-add-modal__name" required onChange={handleCategory} />
+                            <input name="name" type="text" id="user-add-modal__name" value={category.name} onChange={handleCategory} />
                         </div>
                         <div>
                             <label htmlFor="user-add-modal__department" className="user-add-modal__text">Департамент:</label>
-                            <select name="department" id="user-add-modal__department" required onChange={(e) => handleSelectCategory(e.target.department)} >
+                            <select name="department" id="user-add-modal__department" value={category.department} onChange={(e) => handleSelectCategory(e.target.value)} >
                                 {
                                     departments.map((el) => (
-                                        <option key={el.value} department={el.value}>{el.label}</option>
+                                        <option key={el.value} value={el.value}>{el.label}</option>
                                     ))
                                 }
                             </select>
                         </div>
                         <div>
                             <label htmlFor="user-add-modal__name" className="user-add-modal__img">Фото:</label>
-                            <input name="imageURL" type="text" id="user-add-modal__img" required onChange={handleCategory} />
+                            <input name="imageURL" type="text" id="user-add-modal__img" value={category.imageURL}  onChange={handleCategory} />
                         </div>
 
                     </div>

@@ -6,7 +6,7 @@ import { setTablesAction, saveTableAction, removeTableAction, editTableAction   
 import AdminHeader from "../admin-header/admin-header";
 import AdminTitle from "../admin-title/admin-title";
 import tableImg from '../../../static/images/table.png'
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 
 const customStyles = {
     content: {
@@ -37,7 +37,6 @@ const AdminTables = () => {
     const [table, setTable] = useState({});
     const handleTable = (e) => setTable({ ...table, [e.target.name]: e.target.value });
     const saveTable = () => {
-        console.log(isEditing);
         isEditing ? dispatch(editTableAction(table)) :  dispatch(saveTableAction(table));
         closeModal();
     }

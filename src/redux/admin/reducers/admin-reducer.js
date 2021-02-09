@@ -56,6 +56,8 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, categories: state.categories.filter(el => el.id !== action.category.id)};
         case ("SET_DEPARTMENTS"):
             return { ...state, departments: action.departments };
+        case ("EDIT_CATEGORY"):
+            return {...state, categories: state.categories.map(el => el.id === action.category.id ? action.category : el)};
 		case ("SET_FREE_TABLES"):
             return { ...state, freeTables: action.tables };
         default:
