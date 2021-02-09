@@ -10,7 +10,7 @@ export const createOrderAPI = `${baseAPI}/Waiter/createOrder`;
 
 export const getAdminTables = `${baseAPI}/Tables`;
 export const getSalesOverview = `${baseAPI}/Statistic/TotalSums`;
-export const getTopMeals = `${baseAPI}/Statistic/MealsTop`;
+export const getTopMeals = `${baseAPI}/Statistic/MealsIncome`;
 export const getTopWaiters = `${baseAPI}/Statistic/WaiterOrders`;
 export const getOrdersOverview = `${baseAPI}/Statistic/totalOrders`;
 

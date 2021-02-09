@@ -17,12 +17,13 @@ import Sidebar from '../components/admin/sidebar/sidebar';
 import SalesOverview from '../components/admin/admin-statistic/sales-overview/sales-overview';
 import AdminHeader from '../components/admin/admin-header/admin-header';
 import MealsPage from '../components/admin/meals-page/meals-page';
+import AdminTables from '../components/admin/admin-tables/admin-tables';
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
 
     return (
-        <div>
+        <div className="app-content">
             <BrowserRouter>
                 <Route path='/' component={Auth} exact />
                 <PrivateRoute path='/admin' auth={isLogged} component={() => <Sidebar />} />
@@ -31,6 +32,7 @@ const App = () => {
                     <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} exact/>
                     <PrivateRoute path='/admin/sales' auth={isLogged} component={() => <SalesOverview />} exact/>
                     <PrivateRoute path='/admin/meals-page' auth={isLogged} component={() => <MealsPage />}/>
+                    <PrivateRoute path='/admin/tables' auth={isLogged} component={() => <AdminTables />}/>
                 </div>
                 <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact/>
                 <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} exact/>

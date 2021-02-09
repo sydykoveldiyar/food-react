@@ -57,15 +57,9 @@ const OrdersOverview = () => {
                     <div class="orders__top-charts">
                         <div className>
                             <Top className="top-meals" title={'Топ кухни'} list={kitchenSums} />
-                            <div className="chart">
-
-                            </div>
                         </div>
                         <div className>
                             <Top className="top-meals" title={'Топ бара'} list={barSums} />
-                            <div className="chart">
-
-                            </div>
                         </div>
                     </div>
                 </div>

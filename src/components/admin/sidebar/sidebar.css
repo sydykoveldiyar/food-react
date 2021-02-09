@@ -5,6 +5,15 @@
     background-color: white;
 }
 
+.admin-sidebar::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100vh;
+    right: 0;
+    background-color: #B80505;
+}
+
 .admin-sidebar__wrapper {
     position: fixed;
 }

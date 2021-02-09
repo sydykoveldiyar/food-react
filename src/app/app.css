@@ -17,6 +17,10 @@ a{
     display: inline-block;
 }
 
+.app-content{
+    background: url('../static/images/bg.png') no-repeat center/cover;
+}
+
 .container {
     max-width: 700px;
     width: 100%;
@@ -29,7 +33,7 @@ a{
 }
 
 .section__content{
-    padding-top: 50px;
+    padding: 50px;
 }
 
 .grid__col-6{
@@ -92,7 +96,6 @@ a{
 .admin-content{
     width: 80%;
     margin-left: 304px;
-    background: url('../static/images/bg.png') no-repeat center/cover;
 }
 
 .footer {

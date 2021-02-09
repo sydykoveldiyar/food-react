@@ -2,7 +2,8 @@ import './sales-overview.css';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { setSalesAction, setTopWaitersAction } from "../../../../redux/admin/actions/admin-actions";
-import AdminHeader from "../../admin-header/admin-header";
+import { getTopMeals } from "../../../api/api";
+import * as axios from 'axios';
 import AdminTitle from "../../admin-title/admin-title";
 import Top from "../../admin-statistic/top/top";
 import chart1 from "../../../../static/images/chart1.png";
@@ -19,13 +20,19 @@ const SalesOverview = () => {
     useEffect(() => {
         dispatch(setSalesAction());
         dispatch(setTopWaitersAction());
+        getMealsIncome();
     }, []);
 
     const sales = useSelector(s => s.admin.sales);
     const topWaiters = useSelector(s => s.admin.topWaiters);
 
+    const [topMeals, setTopMeals] = useState([]);
+    const getMealsIncome = async () => {
+        const { data : top } = await axios.get(`${getTopMeals}`);
+        setTopMeals(top);
+    }
+
     return (
-        <div>
             <section className="sales">
                 <div className="sales-content">
                     <div className="admin__container container section__content">
@@ -63,11 +70,16 @@ const SalesOverview = () => {
                                 
                             </div>
                         </div>
+                        <div className="top-charts">
+                            <Top className="top-meals" title={'Топ дохода блюд'} list={topMeals} />
+                            <div className="chart">
+                                
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </section>
-        </div>
     );
 }
 
