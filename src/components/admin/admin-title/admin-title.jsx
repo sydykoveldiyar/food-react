@@ -1,10 +1,10 @@
 import "./admin-title.css";
 
-const AdminTitle = () => {
+const AdminTitle = (props) => {
     return (
         <div className="admin-title">
-            <p className="admin-section__title">Столы</p>
-            <button className="admin-section__btn">Добавить</button>
+            <p className="admin-section__title">{props.title}</p>
+            { props.isEntity ? <button className="admin-section__btn">Добавить</button> : null }
         </div>
     );
 }

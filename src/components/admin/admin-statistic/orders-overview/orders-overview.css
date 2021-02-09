@@ -1,0 +1,112 @@
+.orders-content {
+    width: 100%;
+}
+
+.orders-content svg{
+    enable-background:new 0 0 512 512;
+}
+
+.orders-content__container {
+    padding: 20px 70px 59px 50px;
+}
+
+.orders__top-menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orders__top-menu__btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.orders__top-menu__btn svg {
+    width: 23px;
+    height: 24px;
+    fill: #766e6a;
+}
+
+.orders__title {
+    margin: 10px 0 21px;
+}
+
+.section__title {
+    font-weight: 500;
+    font-size: 30px;
+    color: #000000;
+}
+
+.grid__col-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+body {
+    font-family: "Avenir Next", sans-serif;
+}
+
+
+.orders-overview {
+    grid-column-gap: 30px;
+}
+
+.orders-overview__item {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #B80505;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.orders-overview__title {
+    font-size: 17px;
+    color: #FFFFFF;
+    margin: 30px 0 5px;
+}
+
+.orders-overview__number {
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.orders-rating {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orders-rating__item-title {
+    margin-left: 26px;
+}
+
+.orders-rating__item-amount {
+    margin-right: 8px;
+}
+
+.footer {
+    background-color: white;
+}
+
+.footer__container {
+    height: 70px;
+    margin: 0 70px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__menu a {
+    font-size: 18px;
+    color: #000000;
+    margin-right: 33px;
+}
+
+.footer__copyright {
+    font-size: 18px;
+    color: #000000;
+}

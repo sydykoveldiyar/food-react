@@ -1,7 +1,7 @@
 import './sales-overview.css';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { setSalesAction, setTopMeals } from "../../../../redux/admin/actions/admin-actions";
+import { setSalesAction, setTopMealsAction, setTopWaitersAction } from "../../../../redux/admin/actions/admin-actions";
 import AdminHeader from "../../admin-header/admin-header";
 import AdminTitle from "../../admin-title/admin-title";
 import Top from "../../admin-statistic/top/top";
@@ -18,18 +18,21 @@ const SalesOverview = () => {
 
     useEffect(() => {
         dispatch(setSalesAction());
-        dispatch(setTopMeals());
+        dispatch(setTopMealsAction());
+        dispatch(setTopWaitersAction());
     }, []);
 
     const sales = useSelector(s => s.admin.sales);
     const topMeals = useSelector(s => s.admin.topMeals);
+    const topWaiters = useSelector(s => s.admin.topWaiters);
+
     return (
         <div>
             <AdminHeader />
             <section className="sales">
                 <div className="sales-content">
                     <div className="admin__container container section__content">
-                        <AdminTitle />
+                        <AdminTitle title={'Обзор доходов'} isEntity={false} />
                         <div className="sales-overview">
                             <div className="sales-overview__item">
                                 <div className="sales-overview__item-title">Общий доход</div>
@@ -57,9 +60,21 @@ const SalesOverview = () => {
                                 <img className="picture_revenue" src={chart5} alt="" />
                             </div>
                         </div>
+                        <div className="top-charts">
+                            <Top className="top-meals" title={'Топ блюд'} list={topMeals} />
+                            <div className="chart">
+
+                            </div>
+                        </div>
+                        <div className="top-charts">
+                            <Top className="top-meals" title={'Топ официантов'} list={topWaiters} />
+                            <div className="chart">
+
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-                <Top title={'Топ блюд'} list={topMeals} />
             </section>
         </div>
     );
