@@ -25,6 +25,9 @@ const WaiterActiveOrders = () => {
     const [meals, setModalMeals] = useState([]);
     const [orderId, setOrderId] = useState(0);
 
+    const activeOrders = useSelector(s => s.waiter.activeOrders);
+    const dispatch = useDispatch();
+
     const openModal = (orderId, meals) => {
         setOrderId(orderId);
         setModalMeals(meals);
@@ -34,7 +37,7 @@ const WaiterActiveOrders = () => {
 
     useEffect(() => {
         dispatch(setActiveOrdersAction());
-    }, []);
+    }, [activeOrders]);
 
     const createOrder = () => {
         const order = {
@@ -69,9 +72,6 @@ const WaiterActiveOrders = () => {
         else
             return '#B80505';
     }
-
-    const activeOrders = useSelector(s => s.waiter.activeOrders);
-    const dispatch = useDispatch();
     return (
         <div>
             <WaiterHeader href={'/'} title={'Список активных заказов'} hasCart={false}/>

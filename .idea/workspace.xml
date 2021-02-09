@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="95a57772-0206-4781-ae58-f011b9b45763" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-tables/admin-tables.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-tables/admin-tables.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/admin/reducers/admin-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/admin/reducers/admin-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/waiter/waiter-active-orders/waiter-active-orders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/waiter/waiter-active-orders/waiter-active-orders.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
       <updated>1612811461215</updated>
       <workItem from="1612811465120" duration="8671000" />
       <workItem from="1612851998435" duration="35408000" />
-      <workItem from="1612897932255" duration="10239000" />
+      <workItem from="1612897932255" duration="11331000" />
     </task>
     <servers />
   </component>
