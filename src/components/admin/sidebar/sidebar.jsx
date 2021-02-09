@@ -16,7 +16,7 @@ const Sidebar = () => {
                             <NavLink to='#' className="admin-sidebar__link">История транзакций</NavLink>
                             <NavLink to='#' className="admin-sidebar__link">Пользователи</NavLink>
                             <NavLink to='#' className="admin-sidebar__link">Категории</NavLink>
-                            <NavLink to='#' className="admin-sidebar__link">Список блюд</NavLink>
+                            <NavLink to='/admin/meals-page' className="admin-sidebar__link">Список блюд</NavLink>
                             <NavLink to='#' className="admin-sidebar__link">Столы</NavLink>
                             <NavLink to='#' className="admin-sidebar__link">Бронирование</NavLink>
                         </div>
