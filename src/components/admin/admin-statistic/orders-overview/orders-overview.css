@@ -67,6 +67,7 @@ body {
     font-size: 17px;
     color: #FFFFFF;
     margin: 30px 0 5px;
+    text-transform: uppercase;
 }
 
 .orders-overview__number {
@@ -88,25 +89,9 @@ body {
     margin-right: 8px;
 }
 
-.footer {
-    background-color: white;
-}
-
-.footer__container {
-    height: 70px;
-    margin: 0 70px 0 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footer__menu a {
-    font-size: 18px;
-    color: #000000;
-    margin-right: 33px;
-}
-
-.footer__copyright {
-    font-size: 18px;
-    color: #000000;
+.orders__top-charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    padding-top: 80px;
 }
