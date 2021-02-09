@@ -4,16 +4,9 @@
     <list default="true" id="95a57772-0206-4781-ae58-f011b9b45763" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-header/admin-header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-header/admin-header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-statistic/orders-overview/orders-overview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-statistic/orders-overview/orders-overview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-statistic/sales-overview/sales-overview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-statistic/sales-overview/sales-overview.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-statistic/sales-overview/sales-overview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-statistic/sales-overview/sales-overview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar/sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar/sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/api/api.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/api/api.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/admin/actions/admin-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page-media.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/meals-page/meals-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612811461215</updated>
       <workItem from="1612811465120" duration="8671000" />
-      <workItem from="1612851998435" duration="8311000" />
+      <workItem from="1612851998435" duration="10493000" />
     </task>
     <servers />
   </component>
