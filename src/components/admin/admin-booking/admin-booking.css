@@ -134,6 +134,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 5%;
+    margin-bottom: 30px;
 }
 
 .booking__top-title {
@@ -186,26 +187,6 @@
     justify-content: center;
     font-size: 24px;
     color: #000000;
-}
-
-.booking__timeline {
-    margin-top: 39px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column-gap: 7px;
-    margin-bottom: 42px;
-}
-
-.booking__timeline-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #E5E5E5;
-    border-radius: 10px;
-    padding: 10px 0;
-    font-weight: 500;
-    color: #000000;
-    transition: .4s;
 }
 
 .booking__free-tables{
