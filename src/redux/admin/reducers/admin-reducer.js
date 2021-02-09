@@ -9,8 +9,9 @@ const initialState = {
     categoryOptions: [],
     users: [],
     userRoles: [],
-    categories: [],
-    departments: []
+	categories: [],
+    departments: [],
+    freeTables: []
 }
 
 export const adminReducer = (state = initialState, action) => {
@@ -43,9 +44,11 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, users: state.users.filter(el => el.id !== action.user.id)};
         case ("ADD_TABLE"):
             return {...state, tables: [...state.tables, action.table]};
+        case ("EDIT_TABLE"):
+            return {...state, tables: state.tables.map(el => el.id === action.table.id ? action.table : el)};
         case ("REMOVE_TABLE"):
             return {...state, tables: state.tables.filter(el => el.id !== action.table.id)};
-        case "SET_CATEGORIES":
+		case "SET_CATEGORIES":
             return { ...state, categories: action.categories }
         case ("ADD_CATEGORY"):
             return {...state, categories: [...state.categories, action.category]};
@@ -53,6 +56,8 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, categories: state.categories.filter(el => el.id !== action.category.id)};
         case ("SET_DEPARTMENTS"):
             return { ...state, departments: action.departments };
+		case ("SET_FREE_TABLES"):
+            return { ...state, freeTables: action.tables };
         default:
             return state
     }

@@ -99,6 +99,13 @@ export const saveTableAction = (entity) => {
     }
 }
 
+export const editTableAction = (entity) => {
+    return async (dispatch) => {
+        const { data: table } = await axios.put(`${tablesAPI}/${entity.id}`, entity);
+        return dispatch({ type: "EDIT_TABLE", table })
+    }
+}
+
 export const removeTableAction = (id) => {
     return async (dispatch) => {
         const { data: table } = await axios.delete(`${tablesAPI}/${id}`);
@@ -134,4 +141,9 @@ export const setDepartmentsAction = () => {
     }
 }
 
-
+export const setFreeTablesAction = () => {
+    return async (dispatch) => {
+        const { data: tables } = await axios.get(`${tablesAPI}/freeTables`);
+        return dispatch({ type: "SET_FREE_TABLES", tables })
+    }
+}

@@ -60,10 +60,6 @@
     outline: none;
 }
 
-
-
-
-
 .booking__text-inp {
     width: 350px;
     height: 40px;
@@ -209,6 +205,7 @@
     padding: 10px 0;
     font-weight: 500;
     color: #000000;
+    transition: .4s;
 }
 
 .booking__free-tables{
@@ -235,6 +232,7 @@
     font-weight: 500;
     font-size: 24px;
     color: #FFFFFF;
+    transition: .4s;
 }
 
 

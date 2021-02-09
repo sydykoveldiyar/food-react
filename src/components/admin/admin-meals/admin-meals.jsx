@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "react-modal";
 import { setMealsAction, setCategoryOptionsAction, addMealAction, editMealAction, removeMealAction } from "../../../redux/admin/actions/admin-actions";
 import './admin-meals.css'
+import AdminTitle from '../admin-title/admin-title';
 
 const customStyles = {
     content: {
@@ -28,7 +29,7 @@ const AdminMeals = () => {
     useEffect(() => {
         dispatch(setMealsAction())
         dispatch(setCategoryOptionsAction())
-    }, [])
+    }, [meals])
 
     useEffect(() => {
         if (categoryOptions.length) setMeal({ ...meal, categoryId: categoryOptions[0].id })
@@ -44,18 +45,19 @@ const AdminMeals = () => {
             console.log(edited);
             dispatch(editMealAction(edited));
         }
+        closeModal();
     }
     const removeMeal = (id) => {
         if(window.confirm("Удалить блюдо?"))
             dispatch(removeMealAction(id));
     }
+    
     return (
         <section className="meals-page">
             <div className="admin__container container section__content">
                 <div className="meals-page__top-box">
-                    <p className="meals-page__title">Meals page</p>
+                    <AdminTitle title={'Блюда'} isEntity={true} openModal={openModal}/>
                     <div className="meals-page__controls">
-                        <button className="meals-page__add-btn" onClick={openModal}>Добавить</button>
                         <div className="meals-page__select-wrapper">
                             <label className="meals-page__select-label" htmlFor="meals-page__select">По
                                 категориям:</label>

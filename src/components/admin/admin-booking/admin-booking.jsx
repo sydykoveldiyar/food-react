@@ -1,8 +1,17 @@
-import React from 'react';
-import {NavLink} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFreeTablesAction } from "../../../redux/admin/actions/admin-actions";
+import { NavLink } from "react-router-dom";
 import './admin-booking.css'
 
 const AdminBooking = () => {
+    const dispatch = useDispatch();
+    const freeTables = useSelector(s => s.admin.freeTables);
+    const tables = useSelector(s => s.admin.tables)
+    useEffect(() => {
+        dispatch(setFreeTablesAction());
+    }, [tables]);
+
     return (
         <div>
             <section className="booking">
@@ -71,42 +80,12 @@ const AdminBooking = () => {
                         <div className="booking__free-tables">
                             <h2 className="booking__middle-title booking__title">Свободные столы</h2>
                             <div className="booking__middle-grid">
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick1" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick1">1</label>
+                                { freeTables.map(item => (
+                                <div key={item.id} className="booking__column">
+                                    <input className="booking__pick" name="pick-table" id={item.id} type="radio"/>
+                                    <label className="booking__middle-item" htmlFor={item.id}>{item.name}</label>
                                 </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick2" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick2">2</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick3" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick3">3</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick4" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick4">4</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick5" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick5">5</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick6" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick6">6</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick7" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick7">7</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick8" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick8">8</label>
-                                </div>
-                                <div className="booking__column">
-                                    <input className="booking__pick" name="pick-table" id="pick9" type="radio"/>
-                                    <label className="booking__middle-item" htmlFor="pick9">9</label>
-                                </div>
+                                ))}
                             </div>
                         </div>
                         <div className="booking__bot-side">

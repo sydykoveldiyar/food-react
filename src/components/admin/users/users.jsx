@@ -35,7 +35,7 @@ const Users = () => {
     const handleUser = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
     useEffect(() => {
-        if(userRoles.length) setUser({...user, role: userRoles[0].id});
+        if(userRoles.length) setUser({...user, role: userRoles[0].value});
     }, [user]);
 
     const saveUser = () => {

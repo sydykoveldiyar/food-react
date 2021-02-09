@@ -19,6 +19,8 @@ a{
 
 .app-content{
     background: url('../static/images/bg.png') no-repeat center/cover;
+    min-height: 100vh;
+    background-attachment: fixed;
 }
 
 .container {
