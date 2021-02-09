@@ -35,7 +35,6 @@ const MenuCategories = () => {
                     ))}
                 </div>
             </ReactCSSTransitionGroup>
-
         </div>
 
     )

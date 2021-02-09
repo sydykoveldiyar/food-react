@@ -23,6 +23,10 @@ a{
     background-attachment: fixed;
 }
 
+.waiter-content{
+    background-color: #fff;
+}
+
 .container {
     max-width: 700px;
     width: 100%;

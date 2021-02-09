@@ -24,13 +24,14 @@ import AdminCategories from "../components/admin/admin-categories/admin-categori
 
 const App = () => {
     const isLogged = localStorage.getItem('jwtToken') ? true : false;
-
+    const isAdmin = isLogged && localStorage.getItem('role') === '1' ? true : false;;
     return (
         <div className="app-content">
             <BrowserRouter>
                 <Route path='/' component={Auth} exact />
                 <PrivateRoute path='/admin' auth={isLogged} component={() => <Sidebar />} />
-                <div className="admin-content">
+                { isAdmin ? (
+                    <div className="admin-content">
                     <PrivateRoute path='/admin' auth={isLogged} component={() => <AdminHeader />} />
                     <PrivateRoute path='/admin' auth={isLogged} component={() => <Admin />} exact/>
                     <PrivateRoute path='/admin/sales' auth={isLogged} component={() => <SalesOverview />} exact/>
@@ -41,11 +42,17 @@ const App = () => {
                     <PrivateRoute path='/admin/booking-list' auth={isLogged} component={() => <AdminBookingList />}/>
                     <PrivateRoute path='/admin/categories' auth={isLogged} component={() => <AdminCategories/>}/>
                 </div>
-                <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact/>
-                <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} exact/>
-                <PrivateRoute path='/menu-categories' auth={isLogged} component={() => <MenuCategories />} exact/>
-                <PrivateRoute path='/dish-order' auth={isLogged} component={() => <DishOrder />} exact/>
-                <PrivateRoute path='/basket' auth={isLogged} component={() => <Basket />} exact/>
+                ) : null }
+                { !isAdmin ? (
+                    <div className="waiter-content">
+                    <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact />
+                    <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} exact />
+                    <PrivateRoute path='/menu-categories' auth={isLogged} component={() => <MenuCategories />} exact />
+                    <PrivateRoute path='/dish-order' auth={isLogged} component={() => <DishOrder />} exact />
+                    <PrivateRoute path='/basket' auth={isLogged} component={() => <Basket />} exact />
+                </div>
+                ) : null }
+                
             </BrowserRouter>
         </div>
     );

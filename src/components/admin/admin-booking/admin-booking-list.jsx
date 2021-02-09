@@ -1,13 +1,21 @@
 import React from 'react';
 import './admin-booking.css'
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const AdminBookingList = () => {
     return (
+        <ReactCSSTransitionGroup
+            transitionName="slide"
+            transitionAppear={true}
+            transitionAppearTimeout={500}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}>
+
             <section className="booking">
                 <div className="admin__container container section__content">
                     <div className="booking__form booking-list__form">
                         <div className="booking__date-part booking-list-date">
-                            <input className="booking__date-inp" type="text" id="datepicker2" value="05-Feb-2021"/>
+                            <input className="booking__date-inp" type="text" id="datepicker2" value="05-Feb-2021" />
                             <label className="booking__calendar" htmlFor="datepicker2"></label>
                         </div>
                         <div className="booking__list grid__col-4">
@@ -41,6 +49,7 @@ const AdminBookingList = () => {
                     </div>
                 </div>
             </section>
+        </ReactCSSTransitionGroup>
     );
 };
 

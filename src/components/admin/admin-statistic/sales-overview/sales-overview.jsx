@@ -12,6 +12,7 @@ import chart3 from "../../../../static/images/chart3.png";
 import chart4 from "../../../../static/images/chart4.png";
 import chart5 from "../../../../static/images/chart5.png";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import chartwaiter from '../../../../static/images/chartwaiters.jpg'
 
 const SalesOverview = () => {
 
@@ -33,6 +34,12 @@ const SalesOverview = () => {
     }
 
     return (
+        <ReactCSSTransitionGroup
+                transitionName="slide"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={500}>
             <section className="sales">
                 <div className="sales-content">
                     <div className="admin__container container section__content">
@@ -67,19 +74,20 @@ const SalesOverview = () => {
                         <div className="top-charts">
                             <Top className="top-meals" title={'Топ официантов'} list={topWaiters} />
                             <div className="chart">
-                                
+                                <img src={chartwaiter} alt=""/>
                             </div>
                         </div>
                         <div className="top-charts">
                             <Top className="top-meals" title={'Топ дохода блюд'} list={topMeals} />
                             <div className="chart">
-                                
+                                <img src={chartwaiter} alt=""/>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </section>
+            </ReactCSSTransitionGroup>
     );
 }
 
