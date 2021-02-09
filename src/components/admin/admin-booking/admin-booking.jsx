@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFreeTablesAction } from "../../../redux/admin/actions/admin-actions";
 import { NavLink } from "react-router-dom";
 import './admin-booking.css'
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import AdminDatePicker from "./admin-date-picker";
 
 const AdminBooking = () => {
     const dispatch = useDispatch();
@@ -29,8 +30,9 @@ const AdminBooking = () => {
                                 <div className="booking__column">
                                     <h2 className="booking__top-title booking__title">Дата брони</h2>
                                     <div className="booking__date-part">
-                                        <input className="booking__date-inp" type="text" id="datepicker2" value="05-Feb-2021" />
-                                        <label className="booking__calendar" htmlFor="datepicker2"></label>
+                                        <AdminDatePicker/>
+                                        {/*<input className="booking__date-inp" type="text" id="datepicker2" value="05-Feb-2021" />*/}
+                                        {/*<label className="booking__calendar" htmlFor="datepicker2"></label>*/}
                                     </div>
                                 </div>
                                 <div className="booking__column">
