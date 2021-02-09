@@ -1,7 +1,8 @@
 const initialState = {
     tables: [],
     sales: [],
-    topMeals: []
+    topMeals: [],
+    allMeals:[],
 }
 
 export const adminReducer = (state = initialState, action) => {
@@ -12,6 +13,8 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, sales: action.sales}
         case ("SET_TOP_MEALS"):
             return {...state, topMeals: action.meals}
+        case ("SET_ALL_MEALS"):
+            return {...state, allMeals: action.allMeals}
         default:
             return state
     }
