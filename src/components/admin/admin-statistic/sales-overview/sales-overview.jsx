@@ -1,7 +1,7 @@
 import './sales-overview.css';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { setSalesAction, setTopMealsAction, setTopWaitersAction } from "../../../../redux/admin/actions/admin-actions";
+import { setSalesAction, setTopWaitersAction } from "../../../../redux/admin/actions/admin-actions";
 import AdminHeader from "../../admin-header/admin-header";
 import AdminTitle from "../../admin-title/admin-title";
 import Top from "../../admin-statistic/top/top";
@@ -18,7 +18,6 @@ const SalesOverview = () => {
 
     useEffect(() => {
         dispatch(setSalesAction());
-        dispatch(setTopMealsAction());
         dispatch(setTopWaitersAction());
     }, []);
 
@@ -28,7 +27,6 @@ const SalesOverview = () => {
 
     return (
         <div>
-            <AdminHeader />
             <section className="sales">
                 <div className="sales-content">
                     <div className="admin__container container section__content">
@@ -58,12 +56,6 @@ const SalesOverview = () => {
                                 <div className="sales-overview__item-title">Средний доход</div>
                                 <div className="sales-overview__item-value">{sales.totalSumAverage} сом</div>
                                 <img className="picture_revenue" src={chart5} alt="" />
-                            </div>
-                        </div>
-                        <div className="top-charts">
-                            <Top className="top-meals" title={'Топ блюд'} list={topMeals} />
-                            <div className="chart">
-
                             </div>
                         </div>
                         <div className="top-charts">
