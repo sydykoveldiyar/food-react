@@ -18,14 +18,17 @@ const customStyles = {
 };
 
 const AdminMeals = () => {
-    const dispatch = useDispatch()
-    const meals = useSelector(s => s.admin.meals)
-    const categoryOptions = useSelector(s => s.admin.categoryOptions)
-
+    const dispatch = useDispatch();
+    const [isEditing, setIsEditing] = useState(false);
+    const meals = useSelector(s => s.admin.meals);
+    const categoryOptions = useSelector(s => s.admin.categoryOptions);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = () => setModalIsOpen(true);
-    const closeModal = () => setModalIsOpen(false);
-
+    const closeModal = () => {
+        setIsEditing(false);
+        setMeal({});
+        setModalIsOpen(false);
+    }
     useEffect(() => {
         dispatch(setMealsAction())
         dispatch(setCategoryOptionsAction())
@@ -38,11 +41,13 @@ const AdminMeals = () => {
     const [meal, setMeal] = useState({ imageURL: "https://i.ibb.co/6Y9Ypvm/image.png" })
     const handleMeal = (e) => setMeal({ ...meal, [e.target.name]: e.target.value });
     const setMealIsActive = (status) => status === 'В наличии' ? true : false;
-    const saveMeal = () => dispatch(addMealAction(meal))
+    const saveMeal = () => {
+        isEditing ? dispatch(editMealAction(meal)) :  dispatch(addMealAction(meal));
+        closeModal();
+    }
     const editStatusMeal = (meal, status) => {
         if (window.confirm('Подтвердите действие')) {
             const edited = status ? { ...meal, mealStatus: 1 } : { ...meal, mealStatus: 0 };
-            console.log(edited);
             dispatch(editMealAction(edited));
         }
         closeModal();
@@ -52,6 +57,20 @@ const AdminMeals = () => {
             dispatch(removeMealAction(id));
     }
     
+    const setEditEntity = (entity) => {
+        setIsEditing(true);
+        setMeal({
+            id: entity.id, 
+            name: entity.name,
+            price: entity.price, 
+            categoryId: entity.categoryId,
+            weight: entity.weight,
+            description: entity.description
+        });
+        console.log(meal);
+        openModal();
+    }
+
     return (
         <section className="meals-page">
             <div className="admin__container container section__content">
@@ -83,7 +102,7 @@ const AdminMeals = () => {
                             <th>Название</th>
                             <th>Категория</th>
                             <th>Статус</th>
-                            <th>Ед.изм.</th>
+                            <th>Вес</th>
                             <th>Цена</th>
                             <th colSpan="1">Операции</th>
                         </tr>
@@ -107,7 +126,7 @@ const AdminMeals = () => {
                                 <td>{item.price}сом</td>
                                 <td>
                                     <div className="meals-page__table-btn-wrapper">
-                                        <button className="meals-page__table-btn">
+                                        <button onClick={() => setEditEntity(item)} className="meals-page__table-btn">
                                             <svg height="325pt" viewBox="0 0 325 325.37515" width="325pt"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -138,11 +157,11 @@ const AdminMeals = () => {
                             <div className="meal-add-modal">
                                 <div className="meal-add-modal__input-wrapper">
                                     <label htmlFor="meal-add-modal__name" className="meal-add-modal__text">Название:</label>
-                                    <input name="name" type="text" id="meal-add-modal__name" required onChange={handleMeal} />
+                                    <input name="name" type="text" id="meal-add-modal__name" required value={meal.name} onChange={handleMeal} />
                                 </div>
                                 <div className="meal-add-modal__input-wrapper">
                                     <label htmlFor="meal-add-modal__categories" className="meal-add-modal__text">Категория:</label>
-                                    <select name="categoryId" id="modal__categories" onChange={handleMeal}>
+                                    <select name="categoryId" id="modal__categories" value={meal.categoryId} onChange={handleMeal}>
                                         {categoryOptions.map(item => (
                                             <option key={item.id} value={item.id}> {item.name}</option>
                                         ))}
@@ -150,15 +169,15 @@ const AdminMeals = () => {
                                 </div>
                                 <div className="meal-add-modal__input-wrapper">
                                     <label htmlFor="meal-add-modal__price" className="meal-add-modal__text">Цена:</label>
-                                    <input name="price" type="number" id="meal-add-modal__price" required onChange={handleMeal} />
+                                    <input name="price" type="number" id="meal-add-modal__price" required value={meal.price} onChange={handleMeal} />
                                 </div>
                                 <div className="meal-add-modal__input-wrapper">
                                     <label htmlFor="meal-add-modal__weight" className="meal-add-modal__text">Вес:</label>
-                                    <input name="weight" type="number" id="meal-add-modal__weight" required onChange={handleMeal} />
+                                    <input name="weight" type="text" id="meal-add-modal__weight" required value={meal.weight} onChange={handleMeal} />
                                 </div>
                                 <div className="meal-add-modal__input-wrapper">
                                     <label htmlFor="meal-add-modal__desc" className="meal-add-modal__text">Описание:</label>
-                                    <textarea name="description" id="meal-add-modal__desc" onChange={handleMeal}></textarea>
+                                    <textarea name="description" id="meal-add-modal__desc" value={meal.description} onChange={handleMeal}></textarea>
                                 </div>
                                 <div className="meal-add-modal__input-wrapper">
                                     <button onClick={saveMeal}>Сохранить</button>
