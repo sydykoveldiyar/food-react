@@ -4,9 +4,11 @@ import './dish-list.css';
 import WaiterHeader from '../waiter-header/waiter-header'
 import { useDispatch, useSelector } from "react-redux";
 import {NavLink} from "react-router-dom";
+import { setItemQuantityAction } from "../../../redux/waiter/actions/waiter-actions";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const DishOrder = () => {
+    const dispatch = useDispatch();
     const meals = useSelector(s => s.waiter.categoryMeals);
 
     const addMealsToBasket = (meal) => {
@@ -36,6 +38,7 @@ const DishOrder = () => {
     }
 
     const upItemCount = (item) => {
+        dispatch(setItemQuantityAction(item));
         item.orderedQuantity++;
     };
 

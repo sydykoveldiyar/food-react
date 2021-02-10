@@ -24,9 +24,10 @@ export const waiterReducer = (state = initialState, action) => {
             return { ...state, activeOrders: action.order };
         case "CLOSE_CHEQUE":
             return {...state, cheque: action.cheque}
-        case "FILTER_TABLES":{
+        case "FILTER_TABLES":
             return {...state, filteredTables: action.filtered }
-        }
+        case "SET_QUANTITY":
+            return {...state, categoryMeals: state.categoryMeals.map(el => el.id === action.entity.id ? action.entity : el)};
         default:
             return state
     }
