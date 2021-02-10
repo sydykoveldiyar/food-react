@@ -30,8 +30,8 @@ const AdminBookingList = () => {
             <section className="booking">
                 <div className="admin__container container section__content">
                     <NavLink to="/admin/booking" className="book-btn">Забронировать</NavLink>
-                    <div className="booking__form booking-list__form">
-                        { books.map(item => (
+                    {books.map(item => (
+                        <div className="booking__form booking-list__form">
                             <div className="booking__list grid__col-4">
                                 <div className="booking-list__column d-flex">
                                     <div className="booking__list-btn">{item.tableName}</div>
@@ -57,11 +57,11 @@ const AdminBookingList = () => {
                                     </div>
                                 </div>
                                 <div className="booking-list__column bottom-right">
-                                    <button className="warn__btn book-unbook-btn" onClick={removeBook}>Снять бронь</button>
+                                    <button className="warn__btn book-unbook-btn" onClick={() => removeBook(item.id)}>Снять бронь</button>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </ReactCSSTransitionGroup>

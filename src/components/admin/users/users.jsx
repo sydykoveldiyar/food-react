@@ -63,7 +63,6 @@ const Users = () => {
             comment: entity.comment,
             imageURL: entity.imageURL
         });
-        console.log(user);
         openModal();
     }
     return (
@@ -149,12 +148,12 @@ const Users = () => {
                                     closeTimeoutMS={300}>
                                     <div className="user-add-modal">
                                         <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__firstName" className="user-add-modal__text">Имя:</label>
-                                            <input name="firstName" type="text" id="user-add-modal__firstName" required value={user.firstName} onChange={handleUser} />
-                                        </div>
-                                        <div className="user-add-modal__input-wrapper">
                                             <label htmlFor="user-add-modal__lastName" className="user-add-modal__text">Фамилия:</label>
                                             <input name="lastName" type="text" id="user-add-modal__lastName" required value={user.lastName} onChange={handleUser} />
+                                        </div>
+                                        <div className="user-add-modal__input-wrapper">
+                                            <label htmlFor="user-add-modal__firstName" className="user-add-modal__text">Имя:</label>
+                                            <input name="firstName" type="text" id="user-add-modal__firstName" required value={user.firstName} onChange={handleUser} />
                                         </div>
                                         <div className="user-add-modal__input-wrapper">
                                             <label htmlFor="user-add-modal__middleName" className="user-add-modal__text">Отчество:</label>

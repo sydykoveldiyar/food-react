@@ -36,11 +36,12 @@ const AdminBooking = () => {
                 bookDate: bookDate,
                 menQuantity: menCounter,
                 clientName: clientInfo.clientName,
-                phomeNumber: clientInfo.phoneNumber
+                phoneNumber: clientInfo.phoneNumber
             };
             console.log(book);
             const { data } = await axios.post(`${bookAPI}`, book);
             window.alert(data.message);
+            window.location = '/admin/booking-list';
         } catch (error) {
             console.log(error);
         }

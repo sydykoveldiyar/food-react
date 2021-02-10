@@ -1,7 +1,7 @@
 .admin-sidebar {
     position: fixed;
     height: 100vh;
-    width: 20%;
+    width: 16%;
     background-color: white;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .admin-sidebar__link {
-    font-size: 21px;
+    font-size: 18px;
     color: #000000;
     transition: .6s;
     display: inline-block;
