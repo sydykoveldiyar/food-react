@@ -44,7 +44,7 @@ const App = () => {
                 </div>
                 ) : null }
                 { !isAdmin ? (
-                    <div className="waiter-content">
+                    <div className="waiters-content">
                     <PrivateRoute path='/waiter' auth={isLogged} component={() => <Waiter />} exact />
                     <PrivateRoute path='/waiter-tables' auth={isLogged} component={() => <WaiterTables />} exact />
                     <PrivateRoute path='/menu-categories' auth={isLogged} component={() => <MenuCategories />} exact />

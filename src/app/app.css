@@ -24,6 +24,7 @@ a{
 }
 
 .waiter-content{
+    min-height: 100vh;
     background-color: #fff;
 }
 
@@ -126,8 +127,4 @@ a{
 .footer__copyright {
     font-size: 18px;
     color: #000000;
-}
-
-.waiter-content {
-    min-height: 100vh;
 }
