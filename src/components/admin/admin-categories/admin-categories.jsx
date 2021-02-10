@@ -43,11 +43,11 @@ const AdminCategories = () => {
     useEffect(() => {
         dispatch(setCategoriesAction());
         dispatch(setDepartmentsAction())
-    }, []);
+    }, [categories]);
 
     useEffect(() => {
         if (departments.length) setCategory({ ...category, department: departments[0].value })
-    }, [departments])
+    }, [])
 
 
     const handleCategory = (e) => setCategory({ ...category, [e.target.name]: e.target.value });

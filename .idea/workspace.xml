@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="95a57772-0206-4781-ae58-f011b9b45763" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-categories/admin-categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-meals/admin-meals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-meals/admin-meals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/users/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/users/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/admin-meals/admin-meals.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/admin-meals/admin-meals.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/users/users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/users/users.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +72,7 @@
       <workItem from="1612811465120" duration="8671000" />
       <workItem from="1612851998435" duration="35408000" />
       <workItem from="1612897932255" duration="11331000" />
-      <workItem from="1612938129107" duration="2805000" />
+      <workItem from="1612938129107" duration="3094000" />
     </task>
     <servers />
   </component>

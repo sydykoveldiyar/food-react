@@ -37,7 +37,7 @@ const AdminMeals = () => {
 
     useEffect(() => {
         if (categoryOptions.length) setMeal({ ...meal, categoryId: categoryOptions[0].id })
-    }, [categoryOptions])
+    }, [])
 
     const [meal, setMeal] = useState({ imageURL: "https://i.ibb.co/6Y9Ypvm/image.png" })
     const handleMeal = (e) => setMeal({ ...meal, [e.target.name]: e.target.value });
