@@ -162,33 +162,33 @@ const AdminMeals = () => {
                             ))}
                             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}
                                 closeTimeoutMS={300}>
-                                <div className="meal-add-modal">
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <label htmlFor="meal-add-modal__name" className="meal-add-modal__text">Название:</label>
-                                        <input name="name" type="text" id="meal-add-modal__name" required value={meal.name} onChange={handleMeal} />
+                                <div className="admin-modal">
+                                    <div className="admin-modal-wrapper">
+                                        <label htmlFor="meal-add-modal__name" className="admin-modal__text">Название:</label>
+                                        <input name="name" type="text" id="meal-add-modal__name" className="admin-modal__input" required value={meal.name} onChange={handleMeal} />
                                     </div>
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <label htmlFor="meal-add-modal__categories" className="meal-add-modal__text">Категория:</label>
-                                        <select name="categoryId" id="modal__categories" value={meal.categoryId} onChange={handleMeal}>
+                                    <div className="admin-modal-wrapper">
+                                        <label htmlFor="meal-add-modal__categories" className="admin-modal__text">Категория:</label>
+                                        <select name="categoryId" id="modal__categories" className="admin-modal__input" value={meal.categoryId} onChange={handleMeal}>
                                             {categoryOptions.map(item => (
                                                 <option key={item.id} value={item.id}> {item.name}</option>
                                             ))}
                                         </select>
                                     </div>
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <label htmlFor="meal-add-modal__price" className="meal-add-modal__text">Цена:</label>
-                                        <input name="price" type="number" id="meal-add-modal__price" required value={meal.price} onChange={handleMeal} />
+                                    <div className="admin-modal-wrapper">
+                                        <label htmlFor="meal-add-modal__price" className="admin-modal__text">Цена:</label>
+                                        <input name="price" type="number" id="meal-add-modal__price" className="admin-modal__input" required value={meal.price} onChange={handleMeal} />
                                     </div>
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <label htmlFor="meal-add-modal__weight" className="meal-add-modal__text">Вес:</label>
-                                        <input name="weight" type="text" id="meal-add-modal__weight" required value={meal.weight} onChange={handleMeal} />
+                                    <div className="admin-modal-wrapper">
+                                        <label htmlFor="meal-add-modal__weight" className="admin-modal__text">Вес:</label>
+                                        <input name="weight" type="text" id="meal-add-modal__weight" className="admin-modal__input" required value={meal.weight} onChange={handleMeal} />
                                     </div>
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <label htmlFor="meal-add-modal__desc" className="meal-add-modal__text">Описание:</label>
-                                        <textarea name="description" id="meal-add-modal__desc" value={meal.description} onChange={handleMeal}></textarea>
+                                    <div className="admin-modal-wrapper">
+                                        <label htmlFor="meal-add-modal__desc" className="admin-modal__text">Описание:</label>
+                                        <textarea name="description" id="meal-add-modal__desc" className="admin-modal__input" value={meal.description} onChange={handleMeal}></textarea>
                                     </div>
-                                    <div className="meal-add-modal__input-wrapper">
-                                        <button onClick={saveMeal}>Сохранить</button>
+                                    <div className="admin-modal-wrapper">
+                                        <button onClick={saveMeal} className="admin-modal__btn">Сохранить</button>
                                     </div>
                                 </div>
                             </Modal>

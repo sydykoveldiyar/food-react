@@ -146,61 +146,61 @@ const Users = () => {
                                 ))}
                                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}
                                     closeTimeoutMS={300}>
-                                    <div className="user-add-modal">
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__lastName" className="user-add-modal__text">Фамилия:</label>
-                                            <input name="lastName" type="text" id="user-add-modal__lastName" required value={user.lastName} onChange={handleUser} />
+                                    <div className=" admin-modal">
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__lastName" className="user-add-modal__text admin-modal__text">Фамилия:</label>
+                                            <input name="lastName" type="text" id="user-add-modal__lastName" className="user-add-modal__input admin-modal__input" required value={user.lastName} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__firstName" className="user-add-modal__text">Имя:</label>
-                                            <input name="firstName" type="text" id="user-add-modal__firstName" required value={user.firstName} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__firstName" className="user-add-modal__text admin-modal__text">Имя:</label>
+                                            <input name="firstName" type="text" id="user-add-modal__firstName" className="user-add-modal__input admin-modal__input" required value={user.firstName} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__middleName" className="user-add-modal__text">Отчество:</label>
-                                            <input name="middleName" type="text" id="user-add-modal__middleName" required value={user.middleName} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__middleName" className="user-add-modal__text admin-modal__text">Отчество:</label>
+                                            <input name="middleName" type="text" id="user-add-modal__middleName" className="user-add-modal__input admin-modal__input" required value={user.middleName} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__gender" className="user-add-modal__text">Пол:</label>
-                                            <input name="gender" type="text" id="user-add-modal__gender" required value={user.gender} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__gender" className="user-add-modal__text admin-modal__text">Пол:</label>
+                                            <input name="gender" type="text" id="user-add-modal__gender" className="user-add-modal__input admin-modal__input" required value={user.gender} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__dateBorn" className="user-add-modal__text">Дата рождения:</label>
-                                            <input name="dateBorn" type="date" id="user-add-modal__dateBorn" required value={user.dateBorn} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__dateBorn" className="user-add-modal__text admin-modal__text">Дата рождения:</label>
+                                            <input name="dateBorn" type="date" id="user-add-modal__dateBorn" className="user-add-modal__date admin-modal__input" required value={user.dateBorn} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__phoneNumber" className="user-add-modal__text">Номер телефона:</label>
-                                            <input name="phoneNumber" type="text" id="user-add-modal__phoneNumber" required value={user.phoneNumber} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__phoneNumber" className="user-add-modal__text admin-modal__text">Номер телефона:</label>
+                                            <input name="phoneNumber" type="text" id="user-add-modal__phoneNumber" className="user-add-modal__input admin-modal__input" required value={user.phoneNumber} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__login" className="user-add-modal__text">Логин:</label>
-                                            <input name="login" type="text" id="user-add-modal__login" required value={user.login} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__login" className="user-add-modal__text admin-modal__text">Логин:</label>
+                                            <input name="login" type="text" id="user-add-modal__login" className="user-add-modal__input admin-modal__input" required value={user.login} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__password" className="user-add-modal__text">Пароль:</label>
-                                            <input name="password" type="password" id="user-add-modal__password" required value={user.password} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__password" className="user-add-modal__text admin-modal__text">Пароль:</label>
+                                            <input name="password" type="password" id="user-add-modal__password" className="user-add-modal__input admin-modal__input" required value={user.password} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__email" className="user-add-modal__text">Email:</label>
-                                            <input name="email" type="email" id="user-add-modal__email" required value={user.email} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__email" className="user-add-modal__text admin-modal__text">Email:</label>
+                                            <input name="email" type="email" id="user-add-modal__email" className="user-add-modal__input admin-modal__input" required value={user.email} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__roles" className="user-add-modal__text">Роль:</label>
-                                            <select name="role" id="modal__roles" value={user.role} onChange={handleUser}>
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__roles" className="user-add-modal__text admin-modal__text">Роль:</label>
+                                            <select name="role" id="modal__roles" className="user-add-modal__select admin-modal__input" value={user.role} onChange={handleUser}>
                                                 {userRoles.map(item => (
                                                     <option key={item.value} value={item.value}> {item.label}</option>
                                                 ))}
                                             </select>
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__comment" className="user-add-modal__text">Комментарий:</label>
-                                            <textarea name="comment" id="user-add-modal__comment" value={user.comment} onChange={handleUser}></textarea>
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__comment" className="user-add-modal__text admin-modal__text">Комментарий:</label>
+                                            <textarea name="comment" id="user-add-modal__comment" className="user-add-modal__input admin-modal__input" value={user.comment} onChange={handleUser}></textarea>
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <label htmlFor="user-add-modal__image" className="user-add-modal__text">Ссылка на картинку:</label>
-                                            <input name="imageURL" type="email" id="user-add-modal__image" required value={user.email} onChange={handleUser} />
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <label htmlFor="user-add-modal__image" className="user-add-modal__text admin-modal__text">Ссылка на картинку:</label>
+                                            <input name="imageURL" type="email" id="user-add-modal__image" className="user-add-modal__input admin-modal__input" required value={user.email} onChange={handleUser} />
                                         </div>
-                                        <div className="user-add-modal__input-wrapper">
-                                            <button onClick={saveUser}>Сохранить</button>
+                                        <div className="user-add-modal__input-wrapper admin-modal-wrapper">
+                                            <button onClick={saveUser} className="user-add-modal__btn admin-modal__btn">Сохранить</button>
                                         </div>
                                     </div>
                                 </Modal>

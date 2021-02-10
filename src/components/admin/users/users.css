@@ -225,11 +225,4 @@
     fill: #808080;
 }
 
-.user-add-modal {
-    width: 350px;
-    border: 2px solid black;
-}
 
-.user-add-modal__input-wrapper {
-    padding: 5px;
-}

@@ -84,13 +84,13 @@ const AdminTables = () => {
                 </section>
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}
                     closeTimeoutMS={300}>
-                    <div className="user-add-modal">
-                        <div className="user-add-modal__input-wrapper">
-                            <label htmlFor="user-add-modal__name" className="user-add-modal__text">Название:</label>
-                            <input name="name" type="text" id="user-add-modal__name" value={table.name} required onChange={handleTable} />
+                    <div className="admin-modal">
+                        <div className="admin-modal-wrapper">
+                            <label htmlFor="user-add-modal__name" className="admin-modal__text">Название:</label>
+                            <input name="name" type="text" id="user-add-modal__name" className="admin-modal__input" value={table.name} required onChange={handleTable} />
                         </div>
-                        <div className="user-add-modal__input-wrapper">
-                            <button onClick={saveTable}>Сохранить</button>
+                        <div className="admin-modal-wrapper">
+                            <button onClick={saveTable} className="admin-modal__btn">Сохранить</button>
                         </div>
                     </div>
                 </Modal>

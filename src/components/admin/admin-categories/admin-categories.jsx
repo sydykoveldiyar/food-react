@@ -104,15 +104,14 @@ const AdminCategories = () => {
                 </section>
                 <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} style={customStyles}
                     closeTimeoutMS={300}>
-                    <div className="user-add-modal">
-                        <div className="user-add-modal__input-wrapper">
-                            <div>
-                                <label htmlFor="user-add-modal__name" className="user-add-modal__text">Имя:</label>
-                                <input name="name" type="text" id="user-add-modal__name" value={category.name} onChange={handleCategory} />
+                    <div className="admin-modal">
+                            <div className="admin-modal-wrapper">
+                                <label htmlFor="user-add-modal__name" className="admin-modal__text">Имя:</label>
+                                <input name="name" type="text" id="user-add-modal__name" className="admin-modal__input" value={category.name} onChange={handleCategory} />
                             </div>
-                            <div>
-                                <label htmlFor="user-add-modal__department" className="user-add-modal__text">Департамент:</label>
-                                <select name="department" id="user-add-modal__department" value={category.department} onChange={(e) => handleSelectCategory(e.target.value)} >
+                            <div className="admin-modal-wrapper">
+                                <label htmlFor="user-add-modal__department" className="admin-modal__text">Департамент:</label>
+                                <select name="department" id="user-add-modal__department" className="admin-modal__input" value={category.department} onChange={(e) => handleSelectCategory(e.target.value)} >
                                     {
                                         departments.map((el) => (
                                             <option key={el.value} value={el.value}>{el.label}</option>
@@ -120,14 +119,12 @@ const AdminCategories = () => {
                                     }
                                 </select>
                             </div>
-                            <div>
-                                <label htmlFor="user-add-modal__name" className="user-add-modal__img">Фото:</label>
-                                <input name="imageURL" type="text" id="user-add-modal__img" value={category.imageURL} onChange={handleCategory} />
+                            <div className="admin-modal-wrapper">
+                                <label htmlFor="user-add-modal__name" className="admin-modal__text">Фото:</label>
+                                <input name="imageURL" type="text" id="user-add-modal__img" className="admin-modal__input" value={category.imageURL} onChange={handleCategory} />
                             </div>
-
-                        </div>
-                        <div className="user-add-modal__input-wrapper">
-                            <button onClick={saveCategory}>Сохранить</button>
+                        <div className="admin-modal-wrapper">
+                            <button className="admin-modal__btn" onClick={saveCategory}>Сохранить</button>
                         </div>
                     </div>
                 </Modal>

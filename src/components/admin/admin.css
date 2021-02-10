@@ -6,3 +6,49 @@
     background: url('../../static/images/bg.png') no-repeat center/cover;
     padding-bottom: 50px;
 }
+
+.admin-modal {
+    width: 350px;
+    border: 2px solid black;
+}
+
+.admin-modal-wrapper {
+    margin: 10px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.admin-modal__btn {
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    background: #04932C;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.admin-modal__btn:hover {
+    opacity: 0.8;
+}
+
+.admin-modal__text {
+    font-size: 15px;
+}
+
+.admin-modal__input {
+    width: 160px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    background: #d7d4d4;
+}
+
+.admin-modal-wrapper select {
+    cursor: pointer;
+}
+
