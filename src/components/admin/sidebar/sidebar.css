@@ -33,6 +33,7 @@
 .admin-sidebar__links {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .admin-sidebar__link {

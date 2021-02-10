@@ -52,7 +52,6 @@ const App = () => {
                     <PrivateRoute path='/basket' auth={isLogged} component={() => <Basket />} exact />
                 </div>
                 ) : null }
-                
             </BrowserRouter>
         </div>
     );

@@ -1,5 +1,5 @@
 import * as axios from 'axios';
-import { tablesAPI, getSalesOverview, getTopWaiters, getOrdersOverview, getMeals, mealsAPI, getCategoryOptions, usersAPI, dictionariesAPI, categoriesAPI, departmentsAPI} from '../../../components/api/api';
+import { tablesAPI, getSalesOverview, getTopWaiters, getOrdersOverview, getMeals, mealsAPI, getCategoryOptions, usersAPI, dictionariesAPI, categoriesAPI, departmentsAPI, getBooksAPI, removeBookAPI} from '../../../components/api/api';
 
 export const setTablesAction = () => {
     return async (dispatch) => {
@@ -159,5 +159,19 @@ export const setFreeTablesAction = () => {
     return async (dispatch) => {
         const { data: tables } = await axios.get(`${tablesAPI}/freeTables`);
         return dispatch({ type: "SET_FREE_TABLES", tables })
+    }
+}
+
+export const setBooksAction = () => {
+    return async (dispatch) => {
+        const { data: books } = await axios.get(`${getBooksAPI}`);
+        return dispatch({ type: "SET_BOOKS", books })
+    }
+}
+
+export const removeBookAction = (id) => {
+    return async (dispatch) => {
+        await axios.delete(`${removeBookAPI}/${id}`);
+        return dispatch({ type: "REMOVE_BOOK", id })
     }
 }

@@ -11,7 +11,8 @@ const initialState = {
     userRoles: [],
 	categories: [],
     departments: [],
-    freeTables: []
+    freeTables: [],
+    books: []
 }
 
 export const adminReducer = (state = initialState, action) => {
@@ -62,6 +63,10 @@ export const adminReducer = (state = initialState, action) => {
             return {...state, categories: state.categories.map(el => el.id === action.category.id ? action.category : el)};
 		case ("SET_FREE_TABLES"):
             return { ...state, freeTables: action.tables };
+        case ("SET_BOOKS"):
+            return {...state, books: action.books};
+        case ("REMOVE_BOOK"):
+            return {...state, books: state.books.filter(el => el.id !== action.id)};
         default:
             return state
     }

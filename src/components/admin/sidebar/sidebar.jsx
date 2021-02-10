@@ -3,6 +3,10 @@ import {NavLink} from "react-router-dom";
 import './sidebar.css'
 
 const Sidebar = () => {
+    const removeToken = () => {
+        localStorage.removeItem('jwtToken');
+        window.location.href = '/';
+    }
     return (
             <section className="admin-sidebar">
                 <div className="admin-sidebar__wrapper">
@@ -15,7 +19,8 @@ const Sidebar = () => {
                             <NavLink to='/admin/categories' className="admin-sidebar__link">Категории</NavLink>
                             <NavLink to='/admin/meals' className="admin-sidebar__link">Список блюд</NavLink>
                             <NavLink to='/admin/tables' className="admin-sidebar__link">Столы</NavLink>
-                            <NavLink to='/admin/booking' className="admin-sidebar__link">Бронирование</NavLink>
+                            <NavLink to='/admin/booking-list' className="admin-sidebar__link">Бронирование</NavLink>
+                            <div to='/' className="admin-sidebar__link" onClick={removeToken}>Выйти</div>
                         </div>
                     </div>
                 </div>

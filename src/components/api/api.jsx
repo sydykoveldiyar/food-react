@@ -27,3 +27,8 @@ export const usersAPI = `${baseAPI}/Users`;
 export const dictionariesAPI = `${baseAPI}/Dictionaries`;
 
 export const departmentsAPI = `${baseAPI}/Dictionaries/Departments`;
+
+export const bookAPI = `${baseAPI}/Admin/BookTable`;
+export const getBooksAPI = `${baseAPI}/Admin/GetBooks`;
+export const removeBookAPI = `${baseAPI}/Admin/deleteBook`;
+
