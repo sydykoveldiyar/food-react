@@ -81,7 +81,7 @@ export const getUserRolesAction = () => {
 export const editUserAction = (entity) => {
     return async (dispatch) => {
         const { data: user } = await axios.put(`${usersAPI}/${entity.id}`, entity);
-        return dispatch({ type: "EDIT_USER", entity })
+        return dispatch({ type: "EDIT_USER", user })
     }
 }
 

@@ -63,6 +63,7 @@ const Users = () => {
             comment: entity.comment,
             imageURL: entity.imageURL
         });
+        console.log(entity);
         openModal();
     }
     return (
