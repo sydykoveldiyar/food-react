@@ -78,7 +78,7 @@ const SalesOverview = () => {
                             </div>
                         </div>
                         <div className="top-charts">
-                            <Top className="top-meals" title={'Топ дохода блюд'} list={topMeals} />
+                            <Top className="top-meals" title={'Топ заказанных блюд'} list={topMeals} />
                             <div className="chart">
                                 <img src={chartwaiter} alt=""/>
                             </div>

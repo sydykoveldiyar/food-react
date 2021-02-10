@@ -12,7 +12,7 @@ export const tablesAPI = `${baseAPI}/Tables`;
 
 export const getSalesOverview = `${baseAPI}/Statistic/TotalSums`;
 export const getOrdersOverview = `${baseAPI}/Statistic/totalOrders`;
-export const getTopMeals = `${baseAPI}/Statistic/MealsIncome`;
+export const getTopMeals = `${baseAPI}/Top/topMeals`;
 export const getTopWaiters = `${baseAPI}/Statistic/WaiterOrders`;
 
 export const getKitchenTop = `${baseAPI}/Statistic/kitchenSums`

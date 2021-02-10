@@ -54,3 +54,9 @@ export const filterTablesAction = (filtered) => {
         return dispatch({ type: "FILTER_TABLES", filtered })
     }
 }
+
+export const setItemQuantityAction = (entity) => {
+    return async (dispatch) => {
+        return dispatch({ type: "SET_QUANTITY", entity })
+    }
+}
