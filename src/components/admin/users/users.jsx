@@ -33,7 +33,7 @@ const Users = () => {
     useEffect(() => {
         dispatch(getUsersAction());
         dispatch(getUserRolesAction());
-    }, []);
+    }, [users]);
     useEffect(() => {
         if (userRoles.length) setUser({ ...user, role: userRoles[0].value });
     }, [userRoles]);

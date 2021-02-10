@@ -99,12 +99,12 @@
     margin: 35px 0 150px;
     border-collapse: collapse;
     background: #FFFFFF;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .meals-page__table th {
-    font-weight: 600;
-    font-size: 21px;
+    font-weight: 500;
+    font-size: 18px;
     color: #000000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     width: 250px;
@@ -119,8 +119,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     width: 250px;
     height: 70px;
-    font-weight: 500;
-    font-size: 21px;
+    font-weight: 400;
+    font-size: 16px;
     color: #000000;
     text-align: center;
 }
